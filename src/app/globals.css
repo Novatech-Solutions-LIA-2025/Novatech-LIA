@@ -4,10 +4,10 @@
 
 :root {
   --background: #020005;
-  --secondary-background: #1C1C1E;
-  --primary-text-color: #FFFFFF;
-  --secondary-text-color: #D1D1D6;
-  --third-text-color: #8E949F;
+  --secondary-background: #1c1c1e;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #d1d1d6;
+  --third-text-color: #8e949f;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -22,8 +22,7 @@
   box-sizing: border-box;
 }
 body {
-  color:  var(--primary-text-color);
+  color: var(--primary-text-color);
   background: var(--background);
   font-family: var(--font-roboto-slab), serif;
- 
 }
