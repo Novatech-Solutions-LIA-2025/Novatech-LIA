@@ -9,6 +9,6 @@
 }
 
 .hero-highlight {
-    color: #0080FF;
+    color: var(--accent2);
     font-weight: 900;
 }
