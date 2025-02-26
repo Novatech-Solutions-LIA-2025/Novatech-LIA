@@ -1,0 +1,14 @@
+.hero {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-text {
+
+}
+
+.hero-highlight {
+    color: #0080FF;
+    font-weight: 900;
+}
