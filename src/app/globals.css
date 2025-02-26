@@ -7,7 +7,7 @@
   --secondary-background: #1c1c1e;
   --primary-text-color: #ffffff;
   --secondary-text-color: #d1d1d6;
-  --third-text-color: #8e949f;
+  --accent: #8e949f;
 }
 
 /* @media (prefers-color-scheme: dark) {
