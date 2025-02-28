@@ -4,10 +4,23 @@
   align-items: center;
   margin: 50px 100px;
 }
+.nav-logo {
+  width: 200px;
+}
 
 .nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    margin: 50px 20px;
+  }
+  .nav-logo {
+    width: 150px;
+  }
+  
 }
