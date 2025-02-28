@@ -1,15 +1,76 @@
 .hero-border-shadow {
-    /* border: 2px inset var(--background);
+    border: 2px inset var(--background);
     background: linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
     background: -ms-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
     background: -moz-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
     background: -webkit-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
-    box-shadow: 0px -30px 0px rgba(0, 0, 0, 0.5), -44px -120px 80px -72px var(--background) inset;
-    /* box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.5); */
+    box-shadow: 0px -50px 0px rgba(0, 0, 0, 0.5), -44px -120px 80px -72px var(--background) inset;
+    
+}
+
+.oval-gradient {
+  width: 520px; 
+  height: 275px; 
+  border-radius: 50%; 
+  background-image: linear-gradient(
+      70deg, 
+      rgba(72, 52, 212, 0.0), 
+      rgba(72, 52, 212, 0.2)
+    );  
+    position: absolute; 
+    top: 0; 
+    right: 150; 
+    margin: -20px -30px; 
+    rotate: -25deg; 
+    backdrop-filter: blur(32px); /* Motsvarar Background Blur 32 i Figma */
+    -webkit-backdrop-filter: blur(32px); /* För Safari */
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    filter: blur(8px);
+  }
+.oval-gradient2 {
+  width: 520px; 
+  height: 275px; 
+  border-radius: 50%; 
+  background-image: linear-gradient(
+      70deg, 
+      rgba(72, 52, 212, 0.0), 
+      rgba(72, 52, 212, 0.2)
+    );  
+    position: absolute;
+    top: 0; 
+    right: 40; 
+    margin: -10px; 
+    rotate: -25deg; 
+    backdrop-filter: blur(32px); 
+    -webkit-backdrop-filter: blur(32px); 
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    filter:  blur(8px);
+}
+.oval-gradient3 {
+  width: 520px;
+  height: 275px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+      70deg, 
+      rgba(72, 52, 212, 0.0), 
+      rgba(72, 52, 212, 0.2)
+    );
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -40px -150px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
 }
 
 .hero {
-    background-image: linear-gradient(rgba(2, 0, 5, 0.5), rgba(2, 0, 5, 0.5)), 
+    background-image: linear-gradient(rgba(2, 0, 5, 0.7), rgba(2, 0, 5, 0.7)), 
       url('public/images/planet-earth-background.jpg');
     height: 50vh;
     background-position: center;
