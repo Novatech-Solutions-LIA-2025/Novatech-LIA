@@ -1,62 +1,76 @@
+
+
 .hero-border-shadow {
-    border: 2px inset var(--background);
-    background: linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
-    background: -ms-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
-    background: -moz-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
-    background: -webkit-linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
-    box-shadow: 0px -50px 0px rgba(0, 0, 0, 0.5), -44px -120px 80px -72px var(--background) inset;
-    
+  border: 2px inset var(--background);
+  background: linear-gradient(to top, rgba(2, 0, 5) 0%, var(--background) 10%);
+  background: -ms-linear-gradient(
+    to top,
+    rgba(2, 0, 5) 0%,
+    var(--background) 10%
+  );
+  background: -moz-linear-gradient(
+    to top,
+    rgba(2, 0, 5) 0%,
+    var(--background) 10%
+  );
+  background: -webkit-linear-gradient(
+    to top,
+    rgba(2, 0, 5) 0%,
+    var(--background) 10%
+  );
+  box-shadow: 0px -50px 0px rgba(0, 0, 0, 0.5),
+    -44px -120px 80px -72px var(--background) inset;
 }
 
 .oval-gradient {
-  width: 520px; 
-  height: 275px; 
-  border-radius: 50%; 
+  width: 520px;
+  height: 275px;
+  border-radius: 50%;
   background-image: linear-gradient(
-      70deg, 
-      rgba(72, 52, 212, 0.0), 
-      rgba(72, 52, 212, 0.2)
-    );  
-    position: absolute; 
-    top: 0; 
-    right: 150; 
-    margin: -20px -30px; 
-    rotate: -25deg; 
-    backdrop-filter: blur(32px); /* Motsvarar Background Blur 32 i Figma */
-    -webkit-backdrop-filter: blur(32px); /* För Safari */
-    z-index: -1;
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    filter: blur(8px);
-  }
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 0;
+  right: 150;
+  margin: -20px -30px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px); /* Motsvarar Background Blur 32 i Figma */
+  -webkit-backdrop-filter: blur(32px); /* För Safari */
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+}
 .oval-gradient2 {
-  width: 520px; 
-  height: 275px; 
-  border-radius: 50%; 
+  width: 520px;
+  height: 275px;
+  border-radius: 50%;
   background-image: linear-gradient(
-      70deg, 
-      rgba(72, 52, 212, 0.0), 
-      rgba(72, 52, 212, 0.2)
-    );  
-    position: absolute;
-    top: 0; 
-    right: 40; 
-    margin: -10px; 
-    rotate: -25deg; 
-    backdrop-filter: blur(32px); 
-    -webkit-backdrop-filter: blur(32px); 
-    z-index: -1;
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    filter:  blur(8px);
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 0;
+  right: 40;
+  margin: -10px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
 }
 .oval-gradient3 {
   width: 520px;
   height: 275px;
   border-radius: 50%;
   background-image: linear-gradient(
-      70deg, 
-      rgba(72, 52, 212, 0.0), 
-      rgba(72, 52, 212, 0.2)
-    );
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
   position: absolute;
   top: 0;
   right: 0;
@@ -69,45 +83,101 @@
   filter: blur(8px);
 }
 
-.hero {
-    background-image: linear-gradient(rgba(2, 0, 5, 0.7), rgba(2, 0, 5, 0.7)), 
-      url('public/images/planet-earth-background.jpg');
-    height: 50vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  
-    /* Endast inset-skugga ovanför */
-    box-shadow: 
-    0px 30px 20px -10px rgba(0, 0, 0, 0.9), /* Skugga ovanför elementet */
-    inset 0px 30px 20px -10px var(--background); /* Inset-skugga ovanför */
-  }
+.oval-gradient4 {
+  width: 520px;
+  height: 275px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px -150px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+  opacity: 0.5;
+}
 
-  .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px; 
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.9), 
-      rgba(0, 0, 0, 0) 
-    );
-    pointer-events: none; 
-  }
+.oval-gradient5 {
+  width: 520px;
+  height: 275px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -40px -280px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(2, 0, 5, 0.7), rgba(2, 0, 5, 0.7)),
+    url("public/images/planet-earth-background.jpg");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  /* Endast inset-skugga ovanför */
+  box-shadow: 0px 30px 20px -10px rgba(0, 0, 0, 0.9),
+    /* Skugga ovanför elementet */ inset 0px 30px 20px -10px var(--background); /* Inset-skugga ovanför */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
 
 .hero-text {
-text-align: center;
-font-size: 4rem;
-margin: 100px auto;
-font-weight: 400;
+  text-align: center;
+  font-size: 4rem;
+  margin: 100px auto;
+  font-weight: 400;
 }
 
 .hero-highlight {
-    color: var(--accent2);
-    font-weight: 900;
-    
+  color: var(--accent2);
+  font-weight: 900;
+}
+
+.hero-subtext {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }

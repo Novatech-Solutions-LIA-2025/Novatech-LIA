@@ -1,0 +1,79 @@
+/* Universal button style */
+button {
+    /* background: rgba(255, 255, 255, 0.1); */
+    border-radius: 8px;
+    box-shadow: 
+      inset 2px 2px 4px rgba(255, 255, 255, 0.2), /* Inner shadow (ljus) */
+      inset -2px -2px 4px rgba(0, 0, 0, 0.2), /* Inner shadow (mörk) */
+      0 4px 30px rgba(0, 0, 0, 0.1); /* Yttre skugga */
+    backdrop-filter: blur(10px); /* Glasliknande blur */
+    -webkit-backdrop-filter: blur(10px); /* För Safari */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Tunn, genomskinlig kant */
+    width: 140px;
+    height: 48px;
+    transition: background 400ms ease-out, box-shadow 400ms ease-out;
+  }
+  
+  /* Primary button style */
+
+  .button-primary {
+    background: linear-gradient(
+      135deg,
+      rgba(13, 0, 38, 0.9) 0%, /* Genomskinlig gradient */
+      rgba(13, 0, 38, 0.9) 48%,
+      rgba(255, 255, 255, 0.3) 50%, /* Genomskinlig mittdel */
+      rgba(13, 0, 38, 0.9) 52%,
+      rgba(13, 0, 38, 0.9) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 300%;
+    animation: button-primary 2.5s ease-in-out infinite;
+    backdrop-filter: blur(36px); /* Glasliknande effekt */
+    box-shadow: 
+      inset 0px 39px 56px -36px rgba(255, 255, 255, 0.25), 
+      inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), 
+      inset 0px -82px 68px -64px rgba(96, 68, 144, 0.15),
+      inset 0px 98px 100px -48px rgba(202, 172, 255, 0.15),
+      inset 0px 4px 18px 0px rgba(154, 146, 210, 0.15),
+      inset 0px 1px 0px 0px rgba(227, 222, 255, 0.10); 
+  }
+
+  .button-primary:hover {
+    /* background: rgba(255, 255, 255, 0.0); */
+    background: var(--accent2);
+    box-shadow: 
+      inset 0px 39px 56px -36px rgba(255, 255, 255, 0.25), 
+      inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), 
+      inset 0px -82px 68px -64px rgba(96, 68, 144, 0.15),
+      inset 0px 98px 100px -48px rgba(202, 172, 255, 0.15),
+      inset 0px 4px 18px 0px rgba(154, 146, 210, 0.15),
+      inset 0px 1px 0px 0px rgba(227, 222, 255, 0.10); 
+  }
+  
+  /* Secondary transparent button style */
+ 
+  
+  .button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1); /* Genomskinlig blå bakgrund vid hover */
+    box-shadow: 
+      inset 2px 2px 4px rgba(255, 255, 255, 0.3), /* Starkare inner shadow vid hover */
+      inset -2px -2px 4px rgba(0, 0, 0, 0.3), /* Starkare inner shadow vid hover */
+      0 4px 30px rgba(0, 0, 0, 0.2); /* Starkare yttre skugga vid hover */
+  }
+  
+  /* primary button for shimmering animation */
+  
+  
+  /* Keyframes med paus */
+  @keyframes button-primary {
+    0% {
+      background-position: 100%;
+    }
+    30% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+  
