@@ -26,5 +26,7 @@ body {
   color: var(--primary-text-color);
   background: var(--background);
   font-family: var(--font-roboto-slab), serif;
+  width: 100svw;
+  overflow-x: hidden;
 }
 
