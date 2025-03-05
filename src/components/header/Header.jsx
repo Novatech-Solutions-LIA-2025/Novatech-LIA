@@ -10,7 +10,7 @@ function Header() {
 
       <header>
         <h1 className="hero-text">
-          Växla Upp Med <span className="hero-highlight">Ny Tech</span>{" "}
+          Växla Upp Med <span className="hero-highlight">Ny Tech</span>
           <br></br>- Framtiden Är Nu
         </h1>
         <div className="button-container">
@@ -18,12 +18,13 @@ function Header() {
           <Button label="Våra tjänster" variant="secondary" />
         </div>
         <div className="hero-border-shadow">
-          <div className="hero">
+          <div className="hero-container">
+            <img className="hero-img" src="/images/planet-earth-background.jpg" alt="" />
             <div className="oval-gradient4"></div>
             <div className="oval-gradient5"></div>
             <p className="hero-subtext">
               Vi arbetar med kraftfulla verktyg och sömlösa integrationer som
-              stärker företag världen över.{" "}
+              stärker företag världen över.
             </p>
           </div>
         </div>
