@@ -1,4 +1,5 @@
 import Button from "../button/Button";
+import Colleagues from "../colleagues/Colleagues";
 import "./header.css";
 
 function Header() {
@@ -26,8 +27,10 @@ function Header() {
               Vi arbetar med kraftfulla verktyg och sömlösa integrationer som
               stärker företag världen över.
             </p>
+            <Colleagues></Colleagues>
           </div>
         </div>
+        
       </header>
     </>
   );
