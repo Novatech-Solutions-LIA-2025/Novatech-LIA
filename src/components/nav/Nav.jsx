@@ -4,7 +4,7 @@ function Nav() {
   return (
     <div >
       <nav className="navbar">
-      <h1>Logo</h1>
+      <img src="images/Logo.svg" alt="Novatech logo" className="nav-logo"/>
         <ul className="nav-list">
           <li>Kollegor</li>
           <li>Tjänster</li>

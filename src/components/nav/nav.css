@@ -4,10 +4,19 @@
   align-items: center;
   margin: 50px 100px;
 }
+.nav-logo {
+  width: 200px;
+}
 
 .nav-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
+
+.nav-list li:hover {
+  color: var(--accent2);
+  cursor: pointer;
+}
+
