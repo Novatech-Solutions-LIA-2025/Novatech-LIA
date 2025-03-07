@@ -21,8 +21,11 @@ export default function RootLayout({ children }) {
       <body className={`${robotoSlab.variable} antialiased`}>
         <Nav></Nav>
         <main>{children}</main>
-        <Insite></Insite>
-        <InputField></InputField>
+        
+        
+        
+        
+        
         <Footer></Footer>
       </body>
     </html>

@@ -3,7 +3,9 @@ import Landing from "../pages/Landing";
 export default function Home() {
   return (
     <>
-    <Landing></Landing>
+    <Landing>
+      
+    </Landing>
     </>
   );
 }

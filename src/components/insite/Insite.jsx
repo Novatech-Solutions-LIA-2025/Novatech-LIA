@@ -3,7 +3,6 @@ import "./insite.css";
 function Insite() {
   return (
     <div className="insite-container">
-         
       <h6 className="insite-title">
         <li className="insite-list-highlight"></li>
         Blog
@@ -12,14 +11,7 @@ function Insite() {
         <span className="insite-headline-highlight">NovaTech</span> - Insite
         <div className="insite-underscore"></div>
       </h1>
-
-
-<img className="blog-image" src="images/Blog.jpg" alt="" />
-
     </div>
-
-
-    
   );
 }
 
