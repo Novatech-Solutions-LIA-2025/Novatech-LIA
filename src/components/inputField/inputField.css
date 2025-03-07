@@ -1,18 +1,26 @@
-.inputField {
-  display: flex;
-  flex-direction: column;
-  margin-left: 70px;
-  
-  
+.input-field-container {
+  margin-left: 100px;
 }
 
-.inputField h1 {
+.input-field-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.contact-headline-title {
   font-size: 30px;
   margin: 0;
   color: var(--secondary-text-color);
 }
 
-.inputField h6 {
+.contact-title {
   display: flex;
   font-size: 11px;
   margin: 0 0 8px 15px;
@@ -22,16 +30,15 @@
   font-weight: 400;
 }
 
-.headlineHighlite {
+.contact-headline-highlight {
   color: var(--accent);
 }
 
-.listHighlite {
+.contact-list-highlight {
   color: var(--accent2);
   animation: blink 2s infinite;
   list-style-type: square;
   margin-bottom: 2px;
- 
 }
 
 @keyframes blink {
@@ -46,10 +53,42 @@
   }
 }
 
-.underscore {
-  width: 21.5%;
+.contact-underscore {
+  width: 100%;
   height: 2.5px;
   background: linear-gradient(to right, #020005, #400099);
   margin-top: -5px;
 }
 
+.input-container {
+  display: flex;
+  width: 50%;
+  gap: 25px;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.input-row {
+  display: flex;
+  gap: 25px;
+}
+
+.name-input {
+  flex: 1;
+  width: 100%;
+  padding: 7px 10px;
+  border: var(--accent) solid 1px;
+  color: var(--secondary-text-color);
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.message-input {
+  width: 100%;
+  padding: 10px;
+  border: var(--accent) solid 1px;
+  color: var(--secondary-text-color);
+  background-color: transparent;
+  border-radius: 4px;
+  resize: vertical;
+}

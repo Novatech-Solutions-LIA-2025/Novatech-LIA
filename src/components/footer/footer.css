@@ -7,8 +7,8 @@
   max-width: 60%;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: auto;
-  margin-top: 150px;
+  margin: 150px auto 0;
+  background-color: transparent;
 }
 
 .footer-images {
@@ -48,12 +48,17 @@
   margin-top: 8px;
 }
 
-.footer-info li {
+.footer-info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-info-item {
   margin-bottom: 5px;
   padding-top: 2px;
 }
 
-.bottom-text {
+.footer-bottom-text {
   text-align: center;
   font-size: 11px;
   margin-top: 35px;

@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
 import InputField from "../components/inputField/InputField";
+import Insite from "../components/insite/Insite";
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
@@ -20,7 +21,11 @@ export default function RootLayout({ children }) {
       <body className={`${robotoSlab.variable} antialiased`}>
         <Nav></Nav>
         <main>{children}</main>
-        <InputField></InputField>
+        
+        
+        
+        
+        
         <Footer></Footer>
       </body>
     </html>
