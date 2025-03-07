@@ -2,8 +2,7 @@ import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
-import InputField from "../components/inputField/InputField";
-import Insite from "../components/insite/Insite";
+
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
