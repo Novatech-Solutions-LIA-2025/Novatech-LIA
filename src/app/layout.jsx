@@ -3,7 +3,6 @@ import "./globals.css";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
 
-
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
   subsets: ["latin"],
@@ -20,11 +19,6 @@ export default function RootLayout({ children }) {
       <body className={`${robotoSlab.variable} antialiased`}>
         <Nav></Nav>
         <main>{children}</main>
-        
-        
-        
-        
-        
         <Footer></Footer>
       </body>
     </html>
