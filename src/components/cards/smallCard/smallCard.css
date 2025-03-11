@@ -1,32 +1,70 @@
+/* Will continue the border later 
+  dropping it for now... */
+.smcard-border {
+  --border-color1: rgb(238, 239, 241);
+  --smborder-colors: var(--border-color1), transparent 50%;
+
+  position: relative;
+}
+
+.smcard-border::after {
+  position: absolute;
+  content: "";
+  width: 150px;
+  height: 100px;
+  top: -14px;
+  left: -14px;
+  z-index: -3;
+  /* background-image: conic-gradient(from 40deg, var(--smborder-colors)); */
+  border-top-left-radius: 16px;
+  border-top: 3px solid var(--border-color1);
+  border-image: linear-gradient(80deg, var(--smborder-colors));
+  border-image-slice: 1;
+
+  /* border-top: solid 3px rgb(238, 239, 241);
+  border-left: solid 3px rgb(238, 239, 241); */
+}
+
+.blackbackground {
+  /* To solve the issue that the card is transparent I put this black div behind
+otherwise the border would look wrong */
+  background-color: black;
+}
+
 .small-card-container {
-    width: 520px;
-    height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap: 16px;
+  width: 520px;
+  height: 310px;
   border-radius: 16px;
-  padding: 16px;
-  text-align: center;
+  padding: 48px;
+
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
-} 
+}
 .small-card-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.01);
-    box-shadow: 
-    inset 0 39px 56px -36px rgba(255, 255, 255, 0.5),
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: inset 0 39px 56px -36px rgba(255, 255, 255, 0.5),
     inset 0 7px 11px -4px rgba(255, 255, 255, 1),
     inset 0 -82px 68px -64px rgba(96, 68, 144, 0.3),
     inset 0 98px 100px -48px rgba(202, 172, 255, 0.3),
     inset 0 4px 18px 0 rgba(154, 146, 210, 0.3),
     inset 0 1px 0 0 rgba(227, 222, 255, 0.2);
-    backdrop-filter: blur(100px);
-  } 
-  /* .small-card-container::after {
+  backdrop-filter: blur(100px);
+  opacity: 0.5;
+}
+/* .small-card-container::after {
     content: "";
     position: absolute;
     top: 0;
@@ -44,21 +82,61 @@
     backdrop-filter: blur(100px);
   } */
 
-.icon,
-h3,
+.small-card-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  background: rgba(243, 156, 18, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.small-card-icon {
+  width: 60%;
+  aspect-ratio: 1/1;
+  background-size: cover;
+  z-index: 2;
+}
+
+.small-card-container h3,
 p {
-  position: relative;
-  z-index: 1; 
+  z-index: 2;
 }
 
 .small-card-container h3 {
-    color: var(--primary-text-color);
+  color: var(--primary-text-color);
 }
 
 .small-card-container p {
-    color: var(--accent);
+  color: var(--accent);
 }
 
+.card-blob {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+
+  aspect-ratio: 1/1;
+  background-color: rgba(106, 0, 255);
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* .small-card-container:hover::before {
+  opacity: 0.3;
+} */
+
+.card-blob:hover {
+  opacity: 0.9;
+  width: 240px;
+  filter: blur(120px);
+}
+
+/* Imports for Backgrounds and Icons */
 .smallbg1 {
   background-image: url("/images/smallbg1.svg");
 }
@@ -71,14 +149,14 @@ p {
   background-image: url("/images/smallbg3.svg");
 }
 
-.card-blob {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  filter: blur(20px); 
-  z-index: 1; 
+.smallicon1 {
+  background-image: url("/images/idea.svg");
+}
+
+.smallicon2 {
+  background-image: url("/images/code-square.svg");
+}
+
+.smallicon3 {
+  background-image: url("/images/cpu-settings.svg");
 }
