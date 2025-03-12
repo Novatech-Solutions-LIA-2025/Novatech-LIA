@@ -49,7 +49,7 @@
 }
 
 .footer-info-list {
-  list-style: none;
+  list-style: inherit;
   padding: 0;
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./insite.css";
 
 function Insite() {
@@ -13,17 +13,36 @@ function Insite() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(null);
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
+    setSlideDirection("next");
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+      setSlideDirection(null);
+    }, 750);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
+    setSlideDirection("prev");
+    setTimeout(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+      setSlideDirection(null);
+    }, 750);
+  };
+
+  const getTransform = () => {
+    if (slideDirection === "next") {
+      return `translateX(-${(currentImageIndex + 1) * 100}%)`;
+    } else if (slideDirection === "prev") {
+      return `translateX(-${(currentImageIndex - 1) * 100}%)`;
+    } else {
+      return `translateX(-${currentImageIndex * 100}%)`;
+    }
   };
 
   return (
@@ -43,11 +62,22 @@ function Insite() {
         <button onClick={prevImage} className="slider-button prev-button">
           &lt;
         </button>
-        <img
-          src={images[currentImageIndex]}
-          alt={`Slide ${currentImageIndex + 1}`}
-          className="slider-image"
-        />
+
+        <div className="slider-image-container">
+          <div
+            className="slider-image-wrapper"
+            style={{ transform: getTransform() }}
+          >
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="slider-image"
+              />
+            ))}
+          </div>
+        </div>
         <button onClick={nextImage} className="slider-button next-button">
           &gt;
         </button>

@@ -78,11 +78,58 @@
   margin-left: 40px;
 }
 
-.slider-image {
+.slider-image-container {
+  position: relative;
   width: 70%;
+  overflow: hidden;
+}
+
+.slider-image-wrapper {
+  display: flex;
+  transition: transform 0.75s ease-in-out;
+}
+
+.slider-image {
+  width: 100%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+
+.image-title {
+  position: absolute;
+  bottom: 110px;
+  left: 80px;
+  text-align: left;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.5); /* Halvgenomskinlig bakgrund */
+  padding: 15px; /* Lite mer padding för bättre utrymme */
+  border-radius: 10px;
+}
+
+.image-title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.image-title .read-more {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.image-title .arrow {
+  
+
+  color: var(--accent2);
 }
 
 .slider-button {
