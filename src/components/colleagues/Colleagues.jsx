@@ -17,9 +17,16 @@ import "./colleagues.css";
 function Colleagues() {
   return (
     <>
-      {/* Placeholders for colleagues */}
-
-      <div className="colleagues-logos">
+    <div className="colleagues-container">
+      
+      <div className="colleagues-title-container">
+        <h6 className="colleagues-small-title">
+          <li className="colleagues-list-highlight"></li>
+          Kunder
+        </h6>
+        <h3 className="colleagues-big-title">Våra <span className="colleagues-title-higtlight">kollegor</span> genom åren</h3>
+      </div>
+      <div className="colleagues-logos"> {/* Placeholders for colleagues */}
         <FontAwesomeIcon icon={faApple} />
         <FontAwesomeIcon icon={faGoogle} />
         <FontAwesomeIcon icon={faMicrosoft} />
@@ -31,6 +38,7 @@ function Colleagues() {
         <FontAwesomeIcon icon={faSlack} />
         <FontAwesomeIcon icon={faDropbox} />
       </div>
+    </div>
     </>
   );
 }
