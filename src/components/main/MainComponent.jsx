@@ -12,7 +12,6 @@ function MainComponent() {
 samarbete med kund" smBackgroundClass="smallbg1" smIconClass="smallicon1"/>
       <Colleagues></Colleagues>
       </div>
-      
     </>
   );
 }
