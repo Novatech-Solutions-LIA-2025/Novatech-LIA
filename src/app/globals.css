@@ -9,6 +9,9 @@
   --secondary-text-color: #d1d1d6;
   --accent: #8e949f;
   --accent2: #0080FF;
+  --large-font-size: 3rem; /* 48px */
+  --medium-font-size: 1.25rem; /* 20px */
+  --small-font-size: 1rem; /* 16px */
 }
 
 /* @media (prefers-color-scheme: dark) {

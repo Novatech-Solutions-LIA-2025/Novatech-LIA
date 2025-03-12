@@ -22,7 +22,7 @@
 
 .colleagues-big-title {
   color: var(--accent);
-  font-size: 3rem;
+  font-size: var(--large-font-size);
   font-weight: 300;
   border-bottom: 4px solid transparent;
   border-image: linear-gradient(45deg, #020005 0%, #400099 100%);
