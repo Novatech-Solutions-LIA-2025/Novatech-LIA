@@ -1,0 +1,73 @@
+.lg-card-container {
+    display: flex;
+    border-radius: 20px;
+    padding: 48px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    height: 490px; 
+    background-color: rgb(13, 0, 38);
+  }
+  
+
+  .text-section {
+    flex: 1; 
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start; 
+    z-index: 1;
+    gap: 32px;
+  }
+
+  .text-section h3 {
+    color: var(--primary-text-color);
+    font-size: var(--large-font-size);
+  }
+
+  .text-section p {
+    color: var(--seceondary-text-color);
+    font-size: var(--small-font-size);
+  }
+  
+  /* If isSplitLayout = true then show .image-section */
+  .image-section {
+    position: absolute; 
+    top: 0;
+    right: 0;
+    width: 50%; 
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  /* Stilar för ikonen */
+  .lg-icon-container {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+  
+  /* Bakgrundsbilder */
+  .lgbg1 {
+    background-image: url("/images/utveckling-design.jpg");
+  }
+  
+  .lgbg2 {
+    background-image: url("/images/integration-optimering.jpg");
+  }
+  
+  .lgbg3 {
+    background-image: url("/images/digital-marknadsföring.jpg");
+  }
+
+  .lgbg4 {
+    background-image: url("/images/ai-drivna-innovationer.jpg");
+  }
+  
+  .lgicon {
+    background-image: url("/images/idea.svg");
+  }
