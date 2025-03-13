@@ -58,10 +58,10 @@ function Insite() {
           Blog
         </h6>
 
-        <h1 className="insite-headline-title">
+        <h3 className="insite-headline-title">
           <span className="insite-headline-highlight">NovaTech</span>- Insite
           <div className="insite-underscore"></div>
-        </h1>
+        </h3>
       </div>
       <div className="image-slider">
       <button
