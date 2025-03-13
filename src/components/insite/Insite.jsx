@@ -1,38 +1,40 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./insite.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Insite() {
   const images = [
-    "/images/blog1.jpg",
-    "/images/blog2.jpg",
-    "/images/blog3.jpg",
-    "/images/blog4.jpg",
-    "/images/blog5.jpg",
+    { src: "/images/blog1.jpg", title: "Blogginlägg" },
+    { src: "/images/blog2.jpg", title: "Blogginlägg" },
+    { src: "/images/blog3.jpg", title: "Blogginlägg" },
+    { src: "/images/blog4.jpg", title: "Blogginlägg" },
+    { src: "/images/blog5.jpg", title: "Blogginlägg" },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(null);
 
   const nextImage = () => {
-    setSlideDirection("next");
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-      setSlideDirection(null);
-    }, 750);
+    if (currentImageIndex < images.length - 1) {
+      setSlideDirection("next");
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => prevIndex + 1);
+        setSlideDirection(null);
+      }, 1000);
+    }
   };
 
   const prevImage = () => {
-    setSlideDirection("prev");
-    setTimeout(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      );
-      setSlideDirection(null);
-    }, 750);
+    if (currentImageIndex > 0) {
+      setSlideDirection("prev");
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => prevIndex - 1);
+        setSlideDirection(null);
+      }, 1000);
+    }
   };
 
   const getTransform = () => {
@@ -44,6 +46,9 @@ function Insite() {
       return `translateX(-${currentImageIndex * 100}%)`;
     }
   };
+
+  const isPrevButtonDisabled = currentImageIndex === 0;
+  const isNextButtonDisabled = currentImageIndex === images.length - 1;
 
   return (
     <div className="insite-container">
@@ -59,7 +64,12 @@ function Insite() {
         </h1>
       </div>
       <div className="image-slider">
-        <button onClick={prevImage} className="slider-button prev-button">
+      <button
+          onClick={prevImage}
+          className={`slider-button prev-button ${
+            isPrevButtonDisabled ? "disabled" : ""
+          }`}
+          disabled={isPrevButtonDisabled}>
           &lt;
         </button>
 
@@ -69,16 +79,28 @@ function Insite() {
             style={{ transform: getTransform() }}
           >
             {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="slider-image"
-              />
+              <div key={index} className="slide">
+                <div className="image-wrapper">
+                <img
+                  src={image.src}
+                  alt={`Slide ${index + 1}`}
+                  className="slider-image"
+                />
+                </div>
+                <div className="image-title">
+                  <h2>{image.title}</h2>
+                  <p className="read-more">
+                  Läs mer <FontAwesomeIcon icon={faArrowRight} className="arrow" />
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-        <button onClick={nextImage} className="slider-button next-button">
+        <button onClick={nextImage} className={`slider-button next-button ${
+            isNextButtonDisabled ? "disabled" : ""
+          }`}
+          disabled={isNextButtonDisabled}>
           &gt;
         </button>
       </div>

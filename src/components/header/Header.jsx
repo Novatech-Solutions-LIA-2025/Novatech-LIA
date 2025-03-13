@@ -1,5 +1,5 @@
 import Button from "../button/Button";
-
+import Tools from "../tools/Tools";
 import "./header.css";
 
 function Header() {
@@ -27,7 +27,7 @@ function Header() {
               Vi arbetar med kraftfulla verktyg och sömlösa integrationer som
               stärker företag världen över.
             </p>
-            
+            <Tools></Tools>
           </div>
         </div>
         
