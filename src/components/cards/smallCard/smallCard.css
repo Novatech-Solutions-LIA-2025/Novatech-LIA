@@ -106,10 +106,12 @@ p {
 
 .small-card-container h3 {
   color: var(--primary-text-color);
+  font-size: var(--medium-font-size);
 }
 
 .small-card-container p {
   color: var(--accent);
+  font-size: var(--small-font-size);
 }
 
 .card-blob {

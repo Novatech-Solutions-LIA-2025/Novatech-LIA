@@ -7,7 +7,7 @@
 .colleagues-small-title {
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: var(--small-font-size);
   margin-left: 15px;
 }
 .colleagues-headline-highlight {
@@ -29,7 +29,7 @@
   border-image-slice: 1;
   width: fit-content;
 }
-.colleagues-title-higtlight {
+.colleagues-title-highlight {
   color: var(--primary-text-color);
   font-weight: 600;
 }
@@ -52,10 +52,11 @@
   gap: 10rem;
   flex-direction: row;
   margin: 150px 0 250px 0;
+  min-width: 100%;
 }
 
 .colleagues-logos svg {
-  width: 75px;
+  width: 55px;
 }
 
 /* Placeholder for fading effect. Might need to change after implementing JS code */
