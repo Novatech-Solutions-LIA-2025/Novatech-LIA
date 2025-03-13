@@ -10,10 +10,10 @@ function InputField() {
             <li className="contact-list-highlight"></li>
             Kontakta oss
           </h6>
-          <h1 className="contact-headline-title">
+          <h3 className="contact-headline-title">
             <span className="contact-headline-highlight">Gratis</span> konsultation
             <div className="contact-underscore"></div>
-          </h1>
+          </h3>
         </div>
         <div className="input-container">
           <div className="input-row">

@@ -12,7 +12,6 @@
   flex-wrap: wrap;
   margin: 150px auto 0;
   background-color: transparent;
-  
 }
 
 .footer-images {
@@ -22,7 +21,6 @@
 
 .footer-logo {
   width: 50%;
-  
   margin-top: 10px;
   margin-left: 75px;
   cursor: pointer;
@@ -47,9 +45,9 @@
 }
 
 .footer-info {
-  font-size: 11px;
+  font-size: var(--small-font-size);
   color: var(--secondary-text-color);
-  margin-right: 70px;
+  margin-right: 50px;
   margin-top: 8px;
 }
 
@@ -61,13 +59,13 @@
 .footer-info-item {
   margin-bottom: 5px;
   padding-top: 2px;
+  color: var(--secondary-text-color);
 }
 
 .footer-bottom-text {
   text-align: center;
-  font-size: 11px;
+  font-size: var(--small-font-size);
   margin-top: 35px;
   margin-bottom: 20px;
   color: var(--secondary-text-color);
 }
-

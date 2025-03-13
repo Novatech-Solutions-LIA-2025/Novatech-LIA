@@ -19,7 +19,7 @@
 }
 
 .insite-headline-title {
-  font-size: 30px;
+  font-size: var(--large-font-size); 
   margin: 0;
   color: var(--secondary-text-color);
   display: flex;
@@ -33,7 +33,7 @@
 
 .insite-title {
   display: flex;
-  font-size: 11px;
+  font-size: var(--small-font-size);
   margin: 0 0 8px 15px;
   align-items: center;
   color: var(--accent);
@@ -130,7 +130,7 @@
   bottom: 30px;
   left: 30px;
   color: white;
-  font-size: 22px;
+  font-size: var(--medium-font-size);
   font-weight: 600;
   z-index: 2;
   /*background-color: rgba(0, 0, 0, 0.5);  
@@ -140,12 +140,12 @@
 
 .image-title h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--medium-font-size);
 }
 
 .image-title .read-more {
   margin-top: 8px;
-  font-size: 14px;
+  font-size:var(--small-font-size);
   font-weight: lighter;
   display: flex;
   align-items: center;
