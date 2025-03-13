@@ -1,17 +1,25 @@
 .input-field-container {
   margin-left: 100px;
+  max-width: 1200px; /* Sätt en maxbredd för behållaren */
+  min-width: 320px; /* Sätt en minsta bredd för behållaren */
+  width: 90%; /* Använd procentuell bredd för flexibilitet */
+  margin: 0 auto; /* Centrera behållaren */
+  
 }
 
 .input-field-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+ flex-wrap: wrap;
+ max-width: 100%; /* Sätt en maxbredd för wrapper */
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
   min-width: 200px;
+  max-width: 400px; /* Sätt en maxbredd för textbehållaren */
 }
 
 .contact-headline-title {
@@ -66,11 +74,14 @@
   gap: 25px;
   flex-direction: column;
   margin-right: 100px;
+  max-width: 600px; /* Sätt en maxbredd för input-behållaren */
+  min-width: 300px; /* Sätt en minsta bredd för input-behållaren */
 }
 
 .input-row {
   display: flex;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 .name-input {
