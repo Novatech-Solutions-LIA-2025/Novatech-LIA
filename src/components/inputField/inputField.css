@@ -1,56 +1,35 @@
-.input-field-container {
-  margin-left: 100px;
-  max-width: 1200px; /* Sätt en maxbredd för behållaren */
-  min-width: 320px; /* Sätt en minsta bredd för behållaren */
-  width: 90%; /* Använd procentuell bredd för flexibilitet */
-  margin: 0 auto; /* Centrera behållaren */
+.input-field {
+  max-width: 1200px; 
+  width: 90%; 
+  margin: 0 auto; 
+  padding: 2rem;
 }
 
-.input-field-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 100%; /* Sätt en maxbredd för wrapper */
+.input-field-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
-.text-container {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  max-width: 400px; /* Sätt en maxbredd för textbehållaren */
+.input-field-text{
+  max-width: 400px; 
 }
 
-.contact-headline-title {
-  font-size: var(--large-font-size);
-  margin: 0;
-  color: var(--secondary-text-color);
-  display: flex;
-  gap: 12px;
-  position: relative;
-  align-items: baseline; /* Justera baslinjen för texten */
-  white-space: nowrap; /* Förhindra radbrytning */
-}
-
-.contact-title {
-  display: flex;
-  font-size: var(--small-font-size);
-  margin: 0 0 8px 15px;
+.input-field-subtitle {
   display: flex;
   align-items: center;
+  font-size: var(--small-font-size);
   color: var(--accent);
-  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
-.contact-headline-highlight {
-  color: var(--accent);
-}
-
-.contact-list-highlight {
-  color: var(--accent2);
+.contact-highlight {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent2);
+  margin-right: 10px;
   animation: blink 2s infinite;
-  list-style-type: square;
-  margin-bottom: 2px;
 }
 
 @keyframes blink {
@@ -65,48 +44,60 @@
   }
 }
 
-.contact-underscore {
-  width: 100%;
+.input-field-title {
+  font-size: var(--large-font-size);
+  color: var(--secondary-text-color);
+  display: flex;
+  position: relative;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.input-field-accent {
+  color: var(--accent);
+}
+
+.input-field-underline {
+  width: 108%;
   height: 2.5px;
   background: linear-gradient(to right, #020005, #400099);
-  margin-top: -5px;
   position: absolute;
   bottom: 3px;
   left: 0;
 }
 
-.input-container {
-  display: flex;
-  width: 50%;
-  gap: 25px;
+.input-field-form {
+ display: flex;
   flex-direction: column;
-  margin-right: 50px;
-  max-width: 600px; /* Sätt en maxbredd för input-behållaren */
-  min-width: 300px; /* Sätt en minsta bredd för input-behållaren */
+  
 }
 
-.input-row {
+.input-field-row {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
-.name-input {
+.input-field-input, .input-field-textarea {
   flex: 1;
   width: 100%;
-  padding: 7px 10px;
-  border: var(--accent) solid 1px;
+  padding: 10px;
+  border: 1px solid var(--accent);
   color: var(--secondary-text-color);
   background-color: transparent;
   border-radius: 4px;
+  font-size: var(--small-font-size);
 }
 
-.message-input {
-  width: 100%;
-  padding: 10px;
-  border: var(--accent) solid 1px;
-  color: var(--secondary-text-color);
-  background-color: transparent;
-  border-radius: 4px;
+.input-field-textarea  {
   resize: vertical;
+  min-height: 150px;
 }
+
+.input-field-button {
+  margin-top: 20px;
+}
+
+
+/* Media Queries för responsivitet */
+

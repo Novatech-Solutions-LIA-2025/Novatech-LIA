@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Insite() {
   const images = [
-    { src: "/images/blog1.jpg", title: "Blogginlägg" },
+    { src: "/images/blog1.jpg", title: "Instagram-inlägg" },
     { src: "/images/blog2.jpg", title: "Blogginlägg" },
     { src: "/images/blog3.jpg", title: "Blogginlägg" },
     { src: "/images/blog4.jpg", title: "Blogginlägg" },
@@ -51,19 +51,21 @@ function Insite() {
   const isNextButtonDisabled = currentImageIndex === images.length - 1;
 
   return (
-    <div className="insite-container">
-      <div className="insite-content">
-        <h6 className="insite-title">
-          <li className="insite-list-highlight"></li>
+    <div className="insite">
+      <div className="insite-header">
+        <h6 className="insite-subtitle">
+          <li className="blog-highlight"></li>
           Blog
         </h6>
 
-        <h3 className="insite-headline-title">
-          <span className="insite-headline-highlight">NovaTech</span>- Insite
-          <div className="insite-underscore"></div>
+        <h3 className="insite-title">
+          <span className="insite-accent">NovaTech-</span>
+          <span>Insite</span> 
+          <div className="insite-underline"></div>
         </h3>
       </div>
-      <div className="image-slider">
+
+      <div className="insite-image-slider">
       <button
           onClick={prevImage}
           className={`slider-button prev-button ${
@@ -73,31 +75,32 @@ function Insite() {
           &lt;
         </button>
 
-        <div className="slider-image-container">
+        <div className="insite-slider-container">
           <div
-            className="slider-image-wrapper"
+            className="insite-slider-wrapper"
             style={{ transform: getTransform() }}
           >
             {images.map((image, index) => (
-              <div key={index} className="slide">
-                <div className="image-wrapper">
+              <div key={index} className="insite-slide">
+                <div className="insite-image-wrapper">
                 <img
                   src={image.src}
                   alt={`Slide ${index + 1}`}
-                  className="slider-image"
+                  className="insite-image"
                 />
                 </div>
-                <div className="image-title">
-                  <h2>{image.title}</h2>
-                  <p className="read-more">
-                  Läs mer <FontAwesomeIcon icon={faArrowRight} className="arrow" />
+
+                <div className="insite-image-content">
+                  <h2 className="insite-image-title">{image.title}</h2>
+                  <p className="insite-read-more">
+                  Läs mer <FontAwesomeIcon icon={faArrowRight} className="insite-arrow" />
                   </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <button onClick={nextImage} className={`slider-button next-button ${
+        <button onClick={nextImage} className={`slider-button slider-next-button ${
             isNextButtonDisabled ? "disabled" : ""
           }`}
           disabled={isNextButtonDisabled}>
