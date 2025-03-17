@@ -1,11 +1,13 @@
 .colleagues-container {
   margin-top: 100px;
-  grid-area: 2 / 2;
+  
+ 
 }
 .colleagues-title-container {
   margin-bottom: 40px;
-  max-width: 80svw;
+  max-width: 1800px;
   margin: 0 auto;
+  
 }
 .colleagues-small-title {
   display: flex;

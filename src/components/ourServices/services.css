@@ -1,12 +1,14 @@
 .services-container {
   margin-top: 100px;
   grid-area: 3 / 2;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 .services-title-container {
   margin-bottom: 40px;
-  max-width: 80svw;
-  margin: 0 auto;
+ 
+  
 }
 
 .services-small-title {
@@ -47,7 +49,7 @@
 }
 
 .large-card-container {
-  max-width: 90svw;
+  
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
