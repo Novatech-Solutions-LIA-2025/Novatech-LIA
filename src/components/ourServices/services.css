@@ -1,9 +1,11 @@
 .services-container {
   margin-top: 100px;
   grid-area: 3 / 2;
-  max-width: 1800px;
+  max-width: 90svw;
   margin: 0 auto;
 }
+
+
 
 .services-title-container {
   margin-bottom: 40px;
@@ -71,3 +73,4 @@
   grid-column: span 1;
   grid-column-start: 1;
 }
+
