@@ -44,9 +44,7 @@ function Footer() {
         </div>
         <div className="footer-info">
           <ul className="footer-list">
-            <li>
-              123 Novatech Avenue, Innovation City
-            </li>
+            <li className="footer-info-item ">123 Novatech Avenue, Innovation City</li >
             <li className="footer-info-item ">info@novatech.com</li>
             <li className="footer-info-item ">+1 (555) 123-4567</li>
             <li className="footer-info-item ">Mon - Fri: 9:00 AM - 6:00 PM</li>
@@ -54,9 +52,7 @@ function Footer() {
         </div>
         </div>
       </footer>
-      <p className="footer-bottom-text">
-        © Copyright 2024 Novatech. Alla rättigheter förbehållna.
-      </p>
+      <p className="footer-bottom-text">© Copyright 2024 Novatech. Alla rättigheter förbehållna.</p>
     </>
   );
 }

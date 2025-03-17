@@ -5,6 +5,7 @@
   justify-content: center;
   max-width: 1200px;
   width: 90%;
+  
   margin: 0 auto;
   padding: 20px;
   margin-bottom: 150px;
@@ -167,7 +168,7 @@
 }
 
 .slider-button.disabled {
-  visibility: hidden;
+  color: gray;
 }
 
 .slider-button:not(.disabled):hover {
