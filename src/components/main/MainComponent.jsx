@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import SmallCard from "../cards/smallCard/SmallCard";
 import "./mainComponent.css";
 import Colleagues from "../colleagues/Colleagues";
@@ -22,4 +22,4 @@ samarbete med kund" smBackgroundClass="smallbg1" smIconClass="smallicon1"/>
   );
 }
 
-export default MainComponent;
+export default MainComponent; */
