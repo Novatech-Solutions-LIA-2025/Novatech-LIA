@@ -22,13 +22,17 @@ function Services() {
           <li>Digital expertis som omvandlar affärer</li>
           <li>Skräddarsydda lösningar för tillväxt</li>
         </ul>
-        <LargeCard
+        <div className="large-card-container">
+          <div className="large-card">
+            <LargeCard
           title="Utveckling och design"
           text="Utveckla intuitiva och användarvänliga digitala upplevelser för mobil och webb"
           lgBackgroundClass="lgbg1"
           width="100%"
-        />
-        <LargeCard
+          />
+          </div>
+        <div className="large-card">
+          <LargeCard
           title="Integration och optimering"
           text="Effektivisera med precision och smart automatisering"
           
@@ -36,19 +40,25 @@ function Services() {
           isSplitLayout={true}
           lgIconClass={<div className="lgicon"></div>} // Lägg till ikon
           imageUrl="/images/integration-optimering.jpg" // Bild för höger sektion
-        />
+          />
+          </div>
+        <div className="small-card">
         <LargeCard
           title="Digital marknadsföring"
           text="Maxa din digitala närvaro och träffsäkerhet"
           lgBackgroundClass="lgbg3"
           width="100%"
-        />
+          />
+        </div>
+        <div className="medium-card">
         <LargeCard
           title="AI-drivna innovationer"
           text="Skarp AI som förvandlar data till handling"
           lgBackgroundClass="lgbg4"
           width="100%"
-        />
+          />
+          </div>
+          </div>
       </div>
     </>
   );

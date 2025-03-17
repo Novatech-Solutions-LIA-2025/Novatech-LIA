@@ -1,42 +1,71 @@
 .services-container {
-    margin-top: 100px;
+  margin-top: 100px;
+  grid-area: 3 / 2;
 }
 
 .services-title-container {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
+  max-width: 80svw;
+  margin: 0 auto;
 }
 
 .services-small-title {
-    display: flex;
-    align-items: center;
-    font-size: var(--small-font-size);
-    margin-left: 15px;
+  display: flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+  margin-left: 15px;
 }
 
 .services-title-highlight {
-    color: var(--primary-text-color);
-    font-weight: 600;
+  color: var(--primary-text-color);
+  font-weight: 600;
 }
 
 .services-list-highlight {
-    color: var(--accent2);
-    animation: blink 2s infinite;
-    list-style-type: square;
+  color: var(--accent2);
+  animation: blink 2s infinite;
+  list-style-type: square;
 }
 
 .services-big-title {
-    color: var(--accent);
-    font-size: var(--large-font-size);
-    font-weight: 300;
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(45deg, #020005 0%, #400099 100%);
-    border-image-slice: 1;
-    width: fit-content;
+  color: var(--accent);
+  font-size: var(--large-font-size);
+  font-weight: 300;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(45deg, #020005 0%, #400099 100%);
+  border-image-slice: 1;
+  width: fit-content;
 }
 
 .services-container ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    font-size: var(--medium-font-size);
-    color: var(--secondary-text-color);
+  list-style-type: disc;
+  margin-left: 20px;
+  font-size: var(--medium-font-size);
+  color: var(--secondary-text-color);
+  max-width: 80svw;
+  margin: 70px auto;
+}
+
+.large-card-container {
+  max-width: 90svw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 6px; 
+  place-content: center;
+  justify-content: center;
+}
+
+/* CSS för kort */
+.large-card {
+  grid-column: span 3;
+}
+
+.medium-card {
+  grid-column: span 2;
+}
+
+.small-card {
+  grid-column: span 1;
+  grid-column-start: 1;
 }
