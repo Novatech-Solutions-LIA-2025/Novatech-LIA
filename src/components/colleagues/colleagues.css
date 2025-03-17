@@ -1,11 +1,13 @@
 .colleagues-container {
   margin-top: 100px;
+  /* max-width: 90svw;
+  margin: 0 auto; */
   
  
 }
 .colleagues-title-container {
   margin-bottom: 40px;
-  max-width: 1800px;
+  max-width: 90svw;
   margin: 0 auto;
   
 }
@@ -38,7 +40,7 @@
   padding-bottom: 4px; 
 }
 .colleagues-title-highlight {
-  color: var(--primary-text-color);
+  color: var(--secondary-text-color);
   font-weight: 600;
 }
 

@@ -175,3 +175,13 @@
   gap: 40px;
   background-color: inherit;
 }
+
+.small-cards-container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 90svw;
+  margin-block-start: -200px;
+}

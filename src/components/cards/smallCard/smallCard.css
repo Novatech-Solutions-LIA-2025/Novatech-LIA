@@ -25,11 +25,7 @@
   border-left: solid 3px rgb(238, 239, 241); */
 }
 
-.blackbackground {
-  /* To solve the issue that the card is transparent I put this black div behind
-otherwise the border would look wrong */
-  background-color: black;
-}
+
 
 .small-card-container {
   display: flex;
