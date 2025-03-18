@@ -5,15 +5,16 @@
   justify-content: center;
   max-width: 90svw;
   width: 90%;
-  
   margin: 0 auto;
   padding: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+  margin-top: 100px;
 }
 
 .insite-header {
   flex: 1;
   margin-right: 50px;
+  position: relative;
 }
 
 .insite-subitle {
@@ -53,6 +54,7 @@
   position: relative;
   gap: 0.5rem;
   margin-bottom: 6rem;
+  margin-right: 300px;
 }
 
 .insite-accent {
@@ -61,10 +63,10 @@
 
 .insite-underline {
   width: 100%;
-  height: 2.5px;
+  height: 4px;
   background: linear-gradient(to right, #020005, #400099);
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   left: 0;
 }
 
@@ -119,8 +121,8 @@
 
 .insite-image-content {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 55px;
+  left: 55px;
   color: white;
   font-size: var(--medium-font-size);
   font-weight: 600;
@@ -175,4 +177,26 @@
   opacity: 0.8;
 }
 
-/* Media Queries för responsivitet */
+.oval-gradient6 {
+  width: 520px;
+  height: 125px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 10%;
+  right: 70%;
+  margin: -10px;
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(28px);
+}
+
+
+/*Responsivitet*/

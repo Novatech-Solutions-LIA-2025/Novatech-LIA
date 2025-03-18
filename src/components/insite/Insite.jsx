@@ -60,18 +60,20 @@ function Insite() {
 
         <h3 className="insite-title">
           <span className="insite-accent">NovaTech-</span>
-          <span>Insite</span> 
+          <span>Insite</span>
           <div className="insite-underline"></div>
         </h3>
+        <div className="oval-gradient6"></div> 
       </div>
 
       <div className="insite-image-slider">
-      <button
+        <button
           onClick={prevImage}
           className={`slider-button prev-button ${
             isPrevButtonDisabled ? "disabled" : ""
           }`}
-          disabled={isPrevButtonDisabled}>
+          disabled={isPrevButtonDisabled}
+        >
           &lt;
         </button>
 
@@ -83,27 +85,34 @@ function Insite() {
             {images.map((image, index) => (
               <div key={index} className="insite-slide">
                 <div className="insite-image-wrapper">
-                <img
-                  src={image.src}
-                  alt={`Slide ${index + 1}`}
-                  className="insite-image"
-                />
+                  <img
+                    src={image.src}
+                    alt={`Slide ${index + 1}`}
+                    className="insite-image"
+                  />
                 </div>
 
                 <div className="insite-image-content">
                   <h2 className="insite-image-title">{image.title}</h2>
                   <p className="insite-read-more">
-                  Läs mer <FontAwesomeIcon icon={faArrowRight} className="insite-arrow" />
+                    Läs mer{" "}
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="insite-arrow"
+                    />
                   </p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <button onClick={nextImage} className={`slider-button slider-next-button ${
+        <button
+          onClick={nextImage}
+          className={`slider-button slider-next-button ${
             isNextButtonDisabled ? "disabled" : ""
           }`}
-          disabled={isNextButtonDisabled}>
+          disabled={isNextButtonDisabled}
+        >
           &gt;
         </button>
       </div>
