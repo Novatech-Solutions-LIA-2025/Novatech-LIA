@@ -40,8 +40,8 @@ button {
   }
 
   .button-primary:hover {
-    /* background: rgba(255, 255, 255, 0.0); */
-    background: var(--accent2);
+    background: rgba(106, 0, 255, 0.5);
+    /* background: var(--accent2); */
     box-shadow: 
       inset 0px 39px 56px -36px rgba(255, 255, 255, 0.25), 
       inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), 

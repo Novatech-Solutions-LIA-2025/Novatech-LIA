@@ -25,6 +25,7 @@
   .text-section h3 {
     color: var(--primary-text-color);
     font-size: var(--large-font-size);
+    font-weight: 400;
   }
 
   .text-section p {

@@ -4,8 +4,10 @@
   align-items: center;
   margin: 50px 100px;
 }
+
 .nav-logo {
   width: 200px;
+  margin-left: 100px;
 }
 
 .nav-list {
