@@ -9,6 +9,8 @@ import {
 function Footer() {
   return (
     <>
+
+    
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-brand">
@@ -51,6 +53,7 @@ function Footer() {
           </ul>
         </div>
         </div>
+        <div className="oval-gradient10"></div>
       </footer>
       <p className="footer-bottom-text">© Copyright 2024 Novatech. Alla rättigheter förbehållna.</p>
     </>
