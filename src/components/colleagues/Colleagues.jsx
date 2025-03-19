@@ -17,6 +17,7 @@ import "./colleagues.css";
 function Colleagues() {
   return (
     <>
+    <div id="#colleagues"> 
     <div className="colleagues-container">
       
       <div className="colleagues-title-container">
@@ -39,6 +40,7 @@ function Colleagues() {
         <FontAwesomeIcon icon={faSlack} />
         <FontAwesomeIcon icon={faDropbox} />
       </div>
+    </div>
     </div>
     </>
   );
