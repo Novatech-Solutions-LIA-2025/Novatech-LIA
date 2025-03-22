@@ -1,38 +1,31 @@
-
-.tools-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    flex-direction: row;
-    margin: 150px 0 250px 0;
-    min-width: 100%;
+.tools-slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 100%;
+  margin: 150px 0 250px 0;
+  position: relative;
 }
 
-.tools-logos svg {
-    width: 55px;
-    height: 55px;
+.tools-slide {
+  display: inline-block; 
+  animation: scrollLogos 20s linear infinite; 
+  padding-left: 10rem;
+  padding-right: 10rem;
+  width: 100svw;
+  color: var(--accent)
 }
 
-/* Placeholder for fading effect. Might need to change after implementing JS code */
-.tools-logos svg:nth-child(1) {
-    opacity: 0.1;
+.tools-slide svg {
+  width: 55px;
+  height: 55px;
+  margin-right: 10rem; 
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%);
   }
-  
-  .tools-logos svg:nth-child(2) {
-    opacity: 0.3;
+  100% {
+    transform: translateX(-50%); 
   }
-  
-  .tools-logos svg:nth-child(3) {
-    opacity: 0.5;
-  }
-  
-  .tools-logos svg:last-child {
-    opacity: 0.1;
-  }
-  .tools-logos svg:nth-last-child(2) {
-    opacity: 0.3;
-  }
-  .tools-logos svg:nth-last-child(3) {
-    opacity: 0.5;
-  }
+}
