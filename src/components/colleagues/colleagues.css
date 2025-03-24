@@ -55,40 +55,26 @@
     opacity: 1;
   }
 }
-.colleagues-logos {
+.colleagues-slider-container {
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 100%;
+  margin: 100px 0;
+  position: relative;
+}
+.colleagues-slide {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 10rem;
-  flex-direction: row;
-  margin: 150px 0 250px 0;
-  
+  align-items: center; 
+ width: 100svw;
+ animation: scrollLogos 20s linear infinite;
+ padding-left: 10rem;
+  padding-right: 10rem;
+  color: var(--accent)
 }
 
-.colleagues-logos svg {
+.colleagues-slide svg {
   width: 55px;
   height: 55px;
-}
-
-/* Placeholder for fading effect. Might need to change after implementing JS code */
-.colleagues-logos svg:nth-child(1) {
-  opacity: 0.1;
-}
-
-.colleagues-logos svg:nth-child(2) {
-  opacity: 0.3;
-}
-
-.colleagues-logos svg:nth-child(3) {
-  opacity: 0.5;
-}
-
-.colleagues-logos svg:last-child {
-  opacity: 0.1;
-}
-.colleagues-logos svg:nth-last-child(2) {
-  opacity: 0.3;
-}
-.colleagues-logos svg:nth-last-child(3) {
-  opacity: 0.5;
+  margin-right: 10rem;
 }
