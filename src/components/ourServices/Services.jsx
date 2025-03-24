@@ -38,8 +38,8 @@ function Services() {
           
           width="100%"
           isSplitLayout={true}
-          lgIconClass={<div className="lgicon"></div>} // Lägg till ikon
-          imageUrl="/images/integration-optimering.jpg" // Bild för höger sektion
+          lgIconClass={<div className="lgicon"></div>} 
+          imageUrl="/images/integration-optimering.jpg" 
           />
           </div>
         <div className="small-card">
