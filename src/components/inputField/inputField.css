@@ -181,9 +181,11 @@ label {
 
 /*Responsivitet*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .input-field-content {
     grid-template-columns: 1fr;
+    max-width: 90vw;
+    margin: 0 auto;
   }
 
   .input-field-text {
