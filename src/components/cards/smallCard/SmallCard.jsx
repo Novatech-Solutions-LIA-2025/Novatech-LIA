@@ -6,7 +6,9 @@ function SmallCard({ title, text, smBackgroundClass, smIconClass }) {
     <>
       
         <div className={`small-card-container ${smBackgroundClass}`}>
-          <div className="card-blob"></div>
+          <div className="card-blob-wrapper">
+            <div className="card-blob"></div>
+            </div>
           <div className="small-card-icon-wrapper">
             <div className={`small-card-icon ${smIconClass}`}></div>
           </div>
