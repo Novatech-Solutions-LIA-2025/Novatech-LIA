@@ -25,6 +25,21 @@ function Header() {
     };
   }, []);
 
+  const scrollToInputField = () => {
+    const inputFieldSection = document.getElementById("#input-field");
+    if (inputFieldSection) {
+      inputFieldSection.scrollIntoView({ behavior: "smooth" }); 
+    }
+  };
+
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("#services");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" }); 
+    }
+  };
+
+
   return (
     <>
       <div className="oval-gradient"></div>
@@ -33,14 +48,15 @@ function Header() {
       <div className="oval-gradient4"></div>
       <div className="oval-gradient5"></div>
 
+
       <header>
         <h1 className="hero-text">
           Växla Upp Med <span className="hero-highlight">Ny Tech</span>
           <br></br>- Framtiden Är Nu
         </h1>
         <div className="button-container">
-          <Button label="Begär offert" variant="primary" />
-          <Button label="Våra tjänster" variant="secondary" />
+          <Button label="Begär offert" variant="primary" onClick={scrollToInputField} />
+          <Button label="Våra tjänster" variant="secondary" onClick={scrollToServices} />
         </div>
         <div className="hero-border-shadow">
           <div className="hero-container">
