@@ -46,7 +46,6 @@ p {
   z-index: 2;
 }
 
-/* Om du vill lägga till skuggorna från din befintliga design */
 .small-card-container::before {
   content: "";
   position: absolute;
@@ -111,10 +110,6 @@ p {
   z-index: 1;
   opacity: 0.5;
 }
-
-/* .small-card-container:hover::before {
-  opacity: 0.3;
-} */
 
 .card-blob:hover {
   opacity: 0.9;
