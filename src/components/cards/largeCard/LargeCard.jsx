@@ -1,14 +1,30 @@
-import React from 'react';
-import './largeCard.css';
+import React from "react";
+import "./largeCard.css";
 
-function LargeCard({ title, text, width, lgBackgroundClass, isSplitLayout, lgIconClass, imageUrl }) {
+function LargeCard({
+  title,
+  text,
+  width,
+  lgBackgroundClass,
+  isSplitLayout,
+  lgIconClass,
+  imageUrl,
+}) {
   return (
     <div
       className={`lg-card-container ${lgBackgroundClass}`}
       style={{ width: width }} //  Set width of card
     >
       <div className="text-section">
-        {lgIconClass && <div className="lg-icon-container">{lgIconClass}</div>} {/* Visa ikon om den finns */}
+        {lgIconClass && (
+
+          <>
+        <div className="lg-blur-effect"></div> 
+        <div className={`lg-icon-container ${lgIconClass}`}> 
+          </div>
+        </>
+        )}
+        
         <h3>{title}</h3>
         <p>{text}</p>
       </div>

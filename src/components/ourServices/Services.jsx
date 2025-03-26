@@ -38,7 +38,7 @@ function Services() {
                 text="Effektivisera med precision och smart automatisering"
                 width="100%"
                 isSplitLayout={true}
-                lgIconClass={<div className="lgicon"></div>} 
+                lgIconClass="lgicon"
                 imageUrl="/images/integration-optimering.jpg" 
               />
             </div>
