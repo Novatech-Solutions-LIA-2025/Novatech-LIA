@@ -170,7 +170,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 5px;
-  transition: all 0.3s ease; /* Lägg till övergång för storlek och opacity */
+  transition: all 0.3s ease; 
 }
 
 .slider-button.disabled {
@@ -206,16 +206,13 @@
 
 @media (max-width: 1800px) {
   .insite {
-    max-width: 100vw; /* Nästan full bredd */
-    margin: 80px auto; /* Minska marginalerna ytterligare */
-  }
-
-  .insite-header {
+    max-width: 100vw;
+    margin: 80px auto;
   }
 
   .insite-title {
     display: inline-block;
-    margin-right: 0; /* Ta bort höger-marginal för att centrera bättre */
+    margin-right: 0;
   }
 
   .insite-image-slider {
@@ -234,7 +231,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 80px auto; /* Minskad marginal för mellanstorlek */
+    margin: 80px auto; 
   }
 
   .insite-header {
@@ -279,8 +276,9 @@
   }
 
   .insite-read-more {
-    font-size: var(--small-font-size);
-    justify-content: center;
+   /* font-size: var(--small-font-size);
+    justify-content: center; */
+    display: none;
   }
 
   .slider-button {

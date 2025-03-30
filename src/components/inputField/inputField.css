@@ -107,6 +107,10 @@ label {
   min-height: 150px;
 }
 
+.input-error {
+  border-color: #400099 !important;
+}
+
 /*.input-field-input:focus,
 .input-field-textarea:focus {
   outline: none;

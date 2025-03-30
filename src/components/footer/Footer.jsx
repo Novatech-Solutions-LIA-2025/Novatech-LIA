@@ -33,6 +33,7 @@ function Footer() {
                 href="https://www.linkedin.com/company/novatech-solutions-ab/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-labelledby="Besök oss på LinkedIn (öppnas i ny flik)"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="footer-icon" />
               </a>
@@ -40,6 +41,7 @@ function Footer() {
                 href="https://www.facebook.com/NovaTechSolutonsAB"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-labelledby="Besök oss på Facebook (öppnas i ny flik)"
               >
                 <FontAwesomeIcon icon={faFacebook} className="footer-icon" />
               </a>
@@ -47,6 +49,7 @@ function Footer() {
                 href="https://www.instagram.com/novatechsolutionsab/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-labelledby="Besök oss på Instagram (öppnas i ny flik)"
               >
                 <FontAwesomeIcon icon={faInstagram} className="footer-icon" />
               </a>
