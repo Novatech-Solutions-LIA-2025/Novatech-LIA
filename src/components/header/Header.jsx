@@ -28,17 +28,16 @@ function Header() {
   const scrollToInputField = () => {
     const inputFieldSection = document.getElementById("#input-field");
     if (inputFieldSection) {
-      inputFieldSection.scrollIntoView({ behavior: "smooth" }); 
+      inputFieldSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById("#services");
     if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" }); 
+      servicesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
 
   return (
     <>
@@ -48,15 +47,22 @@ function Header() {
       <div className="oval-gradient4"></div>
       <div className="oval-gradient5"></div>
 
-
       <header>
         <h1 className="hero-text">
           Växla Upp Med <span className="hero-highlight">Ny Tech</span>
           <br></br>- Framtiden Är Nu
         </h1>
         <div className="button-container">
-          <Button label="Begär offert" variant="primary" onClick={scrollToInputField} />
-          <Button label="Våra tjänster" variant="secondary" onClick={scrollToServices} />
+          <Button
+            label="Begär offert"
+            variant="primary"
+            onClick={scrollToInputField}
+          />
+          <Button
+            label="Våra tjänster"
+            variant="secondary"
+            onClick={scrollToServices}
+          />
         </div>
         <div className="hero-border-shadow">
           <div className="hero-container">
@@ -70,6 +76,7 @@ function Header() {
           </div>
           <div className="small-cards-container">
             <SmallCard
+              containerClass="small-card-container-variant1"
               smBackgroundClass="smallbg1"
               smIconClass="smallicon1"
               title="Rådgivning och workshops"
@@ -77,18 +84,20 @@ function Header() {
 samarbete med kund"
             />
             <SmallCard
-              smBackgroundClass="smallbg1"
-              smIconClass="smallicon1"
-              title="Rådgivning och workshops"
-              text="Från tanke till verklighet - strategisk planering i
-samarbete med kund"
+              containerClass="small-card-container-variant2"
+              smBackgroundClass="smallbg2"
+              smIconClass="smallicon2"
+              title="Design och Utveckling"
+              text="Skapa användarvänliga lösningar med skalbar
+och robust kod"
             />
             <SmallCard
-              smBackgroundClass="smallbg1"
-              smIconClass="smallicon1"
-              title="Rådgivning och workshops"
-              text="Från tanke till verklighet - strategisk planering i
-samarbete med kund"
+              containerClass="small-card-container-variant3"
+              smBackgroundClass="smallbg3"
+              smIconClass="smallicon3"
+              title="Support och Underhåll"
+              text="Säkra långsiktig framgång med kontinuerlig
+optimering och support"
             />
           </div>
         </div>
