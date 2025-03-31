@@ -103,7 +103,7 @@ label {
   background-color: transparent;
   color: var(--secondary-text-color);
   border-radius: 4px;
-  resize: vertical;
+  resize: none;
   min-height: 150px;
 }
 
@@ -211,7 +211,7 @@ label {
   .oval-gradient9 {
     width: 300px;
     height: 150px;
-    /*display: none;*/
+    display: none;
   }
 
   .oval-gradient9 {

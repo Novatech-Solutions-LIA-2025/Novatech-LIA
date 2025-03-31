@@ -19,6 +19,12 @@
   filter: invert(1);
   margin-right: 70px;
 }
+
+.hamburger.xmark {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
 .nav-list {
   display: flex;
   justify-content: center;

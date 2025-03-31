@@ -1,8 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import "./nav.css";
 
 function Nav() {
+  const [isMenuOpen, setIsMenyOpen] = useState(false);
+
+  const toogleMenu = () => {
+    setIsMenyOpen(!isMenuOpen);
+  };
+
   const scrollToColleagues = () => {
     const colleaguesSection = document.getElementById("#colleagues");
     if (colleaguesSection) {
@@ -36,9 +43,10 @@ function Nav() {
       <nav className="navbar">
         <img src="images/Logo.svg" alt="Novatech logo" className="nav-logo" />
         <img
-          src="images/bars-solid.svg"
+          src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
           alt="menu-icon"
           className="hamburger"
+          onClick={toogleMenu}
         />
         <ul className="nav-list">
           <li onClick={scrollToColleagues}>Kollegor</li>
