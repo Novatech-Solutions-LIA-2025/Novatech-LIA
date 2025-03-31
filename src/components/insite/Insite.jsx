@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Insite() {
   const images = [
-    { src: "/images/blog1.jpg", title: "Instagram-inlägg" },
+    { src: "/images/blog1.jpg", title: "Våra senaste inlägg" },
     { src: "/images/blog2.jpg", title: "Blogginlägg" },
     { src: "/images/blog3.jpg", title: "Blogginlägg" },
     { src: "/images/blog4.jpg", title: "Blogginlägg" },
@@ -95,13 +95,14 @@ function Insite() {
 
                   <div className="insite-image-content">
                     <h2 className="insite-image-title">{image.title}</h2>
-                    <a href="#blog" target="blank"><p className="insite-read-more">
-                      Läs mer{" "}
-                      <FontAwesomeIcon
-                        icon={faArrowRight}
-                        className="insite-arrow"
-                      />
-                    </p>
+                    <a href="#blog" target="blank">
+                      <p className="insite-read-more">
+                        Läs mer{" "}
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          className="insite-arrow"
+                        />
+                      </p>
                     </a>
                   </div>
                 </div>

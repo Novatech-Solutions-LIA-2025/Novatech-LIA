@@ -107,6 +107,10 @@ label {
   min-height: 150px;
 }
 
+.input-error {
+  border-color: #400099 !important;
+}
+
 /*.input-field-input:focus,
 .input-field-textarea:focus {
   outline: none;
@@ -181,9 +185,11 @@ label {
 
 /*Responsivitet*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   .input-field-content {
     grid-template-columns: 1fr;
+    max-width: 650px; /* Mindre bredd om nödvändigt */
+    margin: 0 auto;
   }
 
   .input-field-text {
