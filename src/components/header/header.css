@@ -159,7 +159,7 @@
 }
 
 .hero-subtext {
-  font-size: 1.5rem;
+  font-size: var(--medium-font-size);
   font-weight: 500;
   color: var(--accent);
   text-align: center;
@@ -186,7 +186,34 @@
   display: flex;
   justify-content: space-around;
   max-width: 100svw;
-  margin-block-start: -300px;
+  margin-block-start: -400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1920px) {
+  .small-cards-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 90svw;
+    gap: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .oval-gradient,
+  .oval-gradient2,
+  .oval-gradient3,
+  .oval-gradient4,
+  .oval-gradient5 {
+    display: none;
+  }
+
+  .hero-text {
+    font-size: var(--large-font-size); 
+  
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -213,7 +240,7 @@
     font-size: var(--medium-font-size);
     margin-block-start: -200px;
   }
-
+  
   .tools-container {
     margin-block-start: -200px;
   }
@@ -225,3 +252,5 @@
     margin-block-start: -400px;
   }
 }
+
+
