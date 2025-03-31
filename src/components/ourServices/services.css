@@ -70,3 +70,66 @@
   grid-column: span 1;
   grid-column-start: 1;
 }
+
+@media screen and (max-width: 480px) {
+  .services-container {
+    margin-top: 100px;
+  }
+
+  .services-title-container {
+    margin-bottom: 20px;
+  }
+
+  .services-small-title {
+    font-size: 0.8rem;
+  }
+
+  .services-big-title {
+    font-size: 1.5rem;
+  }
+
+  .services-container ul {
+    font-size: 0.8rem;
+  }
+
+ 
+}
+
+@media screen and (max-width: 768px) {
+  .services-container {
+    margin-top: 100px;
+  }
+
+  .services-title-container {
+    margin-bottom: 20px;
+  }
+
+  .services-small-title {
+    font-size: 0.9rem;
+  }
+
+  .services-big-title {
+    font-size: 2rem;
+  }
+
+  .services-container ul {
+    font-size: 0.9rem;
+  }
+
+  .large-card-container {
+    gap: 10px;
+    width: 90svw;
+  }
+  .large-card {
+    grid-column: span 3;
+  }
+  
+  .medium-card {
+    grid-column: span 3;
+  }
+  
+  .small-card {
+    grid-column: span 3;
+  }
+
+}

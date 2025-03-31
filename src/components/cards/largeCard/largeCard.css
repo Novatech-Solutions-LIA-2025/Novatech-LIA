@@ -1,116 +1,189 @@
 .lg-card-container {
-    display: flex;
-    border-radius: 20px;
-    padding: 48px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    height: 490px; 
-    background-color: rgb(13, 0, 38);
-  }
-  
+  display: flex;
+  border-radius: 20px;
+  padding: 48px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  height: 490px;
+  background-color: rgb(13, 0, 38);
+}
 
-  .text-section {
-    flex: 1; 
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: flex-start; 
-    z-index: 1;
-    gap: 32px;
-  }
+.text-section {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  z-index: 1;
+  gap: 32px;
+}
 
+.text-section h3 {
+  color: var(--primary-text-color);
+  font-size: var(--large-font-size);
+  font-weight: 400;
+}
+
+.text-section p {
+  color: var(--seceondary-text-color);
+  font-size: var(--small-font-size);
+  font-weight: 300;
+}
+
+/* If isSplitLayout = true then show .image-section */
+
+.image-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.lg-blur-effect {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
+  position: relative;
+}
+
+.lg-icon-container {
+  width: 300px;
+  height: 400px;
+  margin-bottom: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
+  position: relative;
+}
+
+.lg-blur-effect::before,
+.lg-icon-container::before {
+  content: "";
+  width: 450px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(46, 26, 71, 0.8),
+    rgba(64, 0, 153, 0.8)
+  );
+
+  position: absolute;
+  top: 150;
+  left: 70;
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
+  filter: blur(50px);
+  opacity: 0.5;
+}
+
+.lgicon {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(106, 0, 255);
+  -webkit-mask-image: url("/images/users-gear-regular.svg");
+  mask-image: url("/images/users-gear-regular.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  filter: blur(100px) brightness(1.5);
+}
+
+@media screen and (max-width: 480px) {
   .text-section h3 {
-    color: var(--primary-text-color);
-    font-size: var(--large-font-size);
-    font-weight: 400;
+    font-size: var(--small-font-size);
   }
 
   .text-section p {
-    color: var(--seceondary-text-color);
-    font-size: var(--small-font-size);
-  }
-  
-  /* If isSplitLayout = true then show .image-section */
-
-  .image-section {
-    position: absolute; 
-    top: 0;
-    right: 0;
-    width: 50%; 
-    height: 100%; 
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .lg-blur-effect {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
-    position: relative;
+    font-size: 0.9rem;
   }
 
   .lg-icon-container {
-    width: 300px;
-    height: 400px;
-    margin-bottom: 16px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: fill;
-    position: relative;
-    
-  }
-
-  .lg-blur-effect::before,
-  .lg-icon-container::before {
-      content: "";
-      width: 450px;
-      height: 400px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, rgba(46, 26, 71, 0.8), rgba(64, 0, 153, 0.8));
-      
-      position: absolute;
-      top: 150;
-      left: 70;
-      transform: translate(-50%, -50%);
-      
-      z-index: -1;
-      filter: blur(50px);
-      opacity: 0.5;
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: -50;
+    left: 60;
+    margin-block-start: -20px;
   }
 
   .lgicon {
-    width: 200%;
-    height: 300%;
-    background-color: rgb(106, 0, 255); 
-    -webkit-mask-image: url("/images/users-gear-regular.svg");
-    mask-image: url("/images/users-gear-regular.svg");
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    filter: blur(100px) brightness(1.5);
-  }
-  
-  .lgbg1 {
-    background-image: url("/images/utveckling-design.jpg");
-  }
-  
-  .lgbg2 {
-    background-image: url("/images/integration-optimering.jpg");
-  }
-  
-  .lgbg3 {
-    background-image: url("/images/digital-marknadsföring.jpg");
+    width: 100px;
+    height: 200px;
   }
 
-  .lgbg4 {
-    background-image: url("/images/ai-ny.jpg");
+  .lg-icon-container::before {
+    width: 100px;
+    height: 200px;
+    top: 50;
+    left: 50;
   }
-  
+}
+
+@media screen and (max-width: 768px) {
+  .lg-card-container {
+    height: 300px;
+  }
+
+  .text-section {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .text-section h3 {
+    font-size: var(--medium-font-size);
+  }
+
+  .text-section p {
+    font-size: var(--small-font-size);
+  }
+
+  .lg-icon-container {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 50;
+    left: 60;
+  }
+
+  .lgicon {
+    width: 100px;
+    height: 200px;
+  }
+
+  .lg-icon-container::before {
+    width: 100px;
+    height: 200px;
+    top: 50;
+    left: 50;
+  }
+}
+
+/* Backgrounds for the large cards */
+.lgbg1 {
+  background-image: url("/images/utveckling-design.jpg");
+}
+
+.lgbg2 {
+  background-image: url("/images/integration-optimering.jpg");
+}
+
+.lgbg3 {
+  background-image: url("/images/digital-marknadsföring.jpg");
+}
+
+.lgbg4 {
+  background-image: url("/images/ai-ny.jpg");
+}

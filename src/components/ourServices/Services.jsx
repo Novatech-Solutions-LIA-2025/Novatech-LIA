@@ -39,7 +39,7 @@ function Services() {
                 width="100%"
                 isSplitLayout={true}
                 lgIconClass="lgicon"
-                imageUrl="/images/integration-optimering.jpg" 
+                imageUrl="/images/integration-optimering.jpg"
               />
             </div>
             <div className="small-card">

@@ -56,6 +56,12 @@ function Colleagues() {
           {logos.map((logo) => (
             <FontAwesomeIcon key={logo.id} icon={logo.icon} alt={logo.alt} />
           ))}
+          {logos.map((logo) => (
+            <FontAwesomeIcon key={logo.id} icon={logo.icon} alt={logo.alt} />
+          ))}
+          {logos.map((logo) => (
+            <FontAwesomeIcon key={logo.id} icon={logo.icon} alt={logo.alt} />
+          ))}
         </div>
       </div>
     </div>

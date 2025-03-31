@@ -17,14 +17,12 @@ function LargeCard({
     >
       <div className="text-section">
         {lgIconClass && (
-
           <>
-        <div className="lg-blur-effect"></div> 
-        <div className={`lg-icon-container ${lgIconClass}`}> 
-          </div>
-        </>
+            <div className="lg-blur-effect"></div>
+            <div className={`lg-icon-container ${lgIconClass}`}></div>
+          </>
         )}
-        
+
         <h3>{title}</h3>
         <p>{text}</p>
       </div>
