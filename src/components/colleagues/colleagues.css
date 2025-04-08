@@ -1,12 +1,9 @@
 .colleagues-container {
-  margin-top: 200px;
-  /* max-width: 90svw;
-  margin: 0 auto; */
+  margin: 200px 0;
 }
 .colleagues-title-container {
-  margin-bottom: 40px;
+  margin: 40px auto 0;
   max-width: 90svw;
-  margin: 0 auto;
 }
 .colleagues-small-title {
   display: flex;

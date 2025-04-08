@@ -35,7 +35,6 @@
     inset 0 1px 0 0 rgba(227, 222, 255, 0.2);
   backdrop-filter: blur(100px);
   opacity: 0.5;
-  border-radius: inherit;
   background-size: inherit;
   background-position: inherit;
   background-image: inherit;
@@ -100,7 +99,6 @@
     inset 0 1px 0 0 rgba(227, 222, 255, 0.2);
   backdrop-filter: blur(100px);
   opacity: 0.5;
-  border-radius: inherit;
   background-size: inherit;
   background-position: inherit;
   background-image: inherit;
@@ -166,7 +164,6 @@
     inset 0 1px 0 0 rgba(227, 222, 255, 0.2);
   backdrop-filter: blur(100px);
   opacity: 0.5;
-  border-radius: inherit;
   background-size: inherit;
   background-position: inherit;
   background-image: inherit;
@@ -302,6 +299,35 @@ p {
   font-size: var(--small-font-size);
 }
 
+@media screen and (max-width: 1440px) {
+  .small-card-container {
+    width: 95%;
+  }
+
+  .small-card-container-variant1::before,
+  .small-card-container-variant2::before,
+  .small-card-container-variant3::before {
+    background-size: cover;
+    filter: brightness(1);
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .small-card-container {
+    width: 85%;
+    gap: 8px;
+  }
+
+  .small-card-container-variant1::before,
+  .small-card-container-variant2::before,
+  .small-card-container-variant3::before {
+    background-size: cover;
+    filter: brightness(1);
+  }
+
+
+}
 /* Imports for Backgrounds and Icons */
 .smallbg1 {
   background-image: url("/images/smallbg1.svg");
