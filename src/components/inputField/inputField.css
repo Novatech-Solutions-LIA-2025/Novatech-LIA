@@ -3,6 +3,7 @@
   width: 90%;
   margin: 0 auto;
   padding: 2rem;
+  text-align: left;
 }
 
 .input-field-content {
@@ -15,6 +16,8 @@
 .input-field-text {
   max-width: 400px;
   position: relative;
+  
+  text-align: left;
 }
 
 .input-field-subtitle {
@@ -23,6 +26,7 @@
   font-size: var(--small-font-size);
   color: var(--accent);
   margin-bottom: 1rem;
+  justify-content: flex-start;
 }
 
 .contact-highlight {
@@ -52,6 +56,7 @@
   display: inline-block;
   position: relative;
   white-space: nowrap;
+  text-align: left;
 }
 .input-field-accent {
   color: var(--accent);
@@ -188,17 +193,20 @@ label {
 @media (max-width: 1400px) {
   .input-field-content {
     grid-template-columns: 1fr;
-    max-width: 650px; /* Mindre bredd om nödvändigt */
+    max-width: 650px; 
     margin: 0 auto;
+    text-align: left;
   }
 
   .input-field-text {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
+  
+
   .input-field-subtitle {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .input-field-row {
@@ -223,16 +231,20 @@ label {
   .input-field {
     padding: 1rem;
     margin-bottom: 100px;
+    text-align: left; 
   }
+
   .input-field-title {
     font-size: calc(var(--large-font-size) * 0.8);
     white-space: normal;
     margin-bottom: 1rem;
     margin-top: 5px;
+    
   }
 
   .input-field-subtitle {
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 5px;
   }
 
   button {

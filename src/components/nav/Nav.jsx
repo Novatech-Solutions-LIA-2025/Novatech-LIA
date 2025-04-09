@@ -6,7 +6,7 @@ import "./nav.css";
 function Nav() {
   const [isMenuOpen, setIsMenyOpen] = useState(false);
 
-  const toogleMenu = () => {
+  const toggleMenu = () => {
     setIsMenyOpen(!isMenuOpen);
   };
 
@@ -46,9 +46,9 @@ function Nav() {
           src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
           alt="menu-icon"
           className="hamburger"
-          onClick={toogleMenu}
+          onClick={toggleMenu}
         />
-        <ul className="nav-list">
+        <ul className={`nav-list ${isMenuOpen ? "mobile-menu-open" : ""}`}>
           <li onClick={scrollToColleagues}>Kollegor</li>
           <li onClick={scrollToServices}>Tjänster</li>
           <li onClick={scrollToInsite}>Insikt</li>
@@ -57,6 +57,8 @@ function Nav() {
             <li>Blogg</li>
           </a>
         </ul>
+
+        {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
       </nav>
     </div>
   );
