@@ -1,6 +1,4 @@
 .services-container {
-  margin-top: 100px;
-  grid-area: 3 / 2;
   max-width: 90svw;
   margin: 0 auto;
 }
@@ -40,7 +38,6 @@
 
 .services-container ul {
   list-style-type: disc;
-  margin-left: 20px;
   font-size: var(--medium-font-size);
   color: var(--secondary-text-color);
   max-width: 90svw;
@@ -49,7 +46,7 @@
 }
 
 .large-card-container {
-  margin: 0 auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
