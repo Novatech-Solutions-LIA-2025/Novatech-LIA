@@ -4,6 +4,7 @@
   align-items: center;
   margin: 50px 100px;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 .nav-logo {
@@ -18,10 +19,21 @@
   height: 45px;
   filter: invert(1);
   margin-right: 70px;
+  transform: scale(0.95);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  filter: invert(1);
+  margin-right: 70px;
+  transform: scale(0.95);
+  z-index: 1001; /* Högre än menyn */
 }
 
 .hamburger.xmark {
-  opacity: 0.8;
   transform: scale(0.95);
 }
 
@@ -45,6 +57,7 @@
   .nav-logo {
     width: 150px;
     margin-left: -50px;
+    z-index: 1001; /* Högre än menyn */
   }
 
   .hamburger {
@@ -53,5 +66,38 @@
 
   .nav-list {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1000;
+    padding: 0 0 0 2.5rem;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .nav-list.mobile-menu-open {
+    display: flex;
+  }
+
+  .nav-list li {
+    font-size: 1.5rem;
+    width: 100%; /* Säkerställer att texten inte centreras */
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    z-index: 999;
   }
 }
