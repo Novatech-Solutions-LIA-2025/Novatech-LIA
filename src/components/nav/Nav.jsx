@@ -1,61 +1,94 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./nav.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLinkedin,
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Nav() {
   const [isMenuOpen, setIsMenyOpen] = useState(false);
 
   const toggleMenu = () => {
+    if (!isMenuOpen) {
+      // När menyn öppnas - stäng av scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      // När menyn stängs - återaktivera scroll
+      document.body.style.overflow = '';
+    }
     setIsMenyOpen(!isMenuOpen);
   };
 
-  const scrollToColleagues = () => {
-    const colleaguesSection = document.getElementById("#colleagues");
-    if (colleaguesSection) {
-      colleaguesSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // Rensa upp vid unmount
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById("#services");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
     }
-  };
-
-  const scrollToInsite = () => {
-    const insiteSection = document.getElementById("#insite");
-    if (insiteSection) {
-      insiteSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToInputField = () => {
-    const inputFieldSection = document.getElementById("#input-field");
-    if (inputFieldSection) {
-      inputFieldSection.scrollIntoView({ behavior: "smooth" });
-    }
+    setIsMenyOpen(false);
+    document.body.style.overflow = ''; // Återaktivera scroll när man klickar på länk
   };
 
   return (
     <div>
       <nav className="navbar">
-        <img src="images/Logo.svg" alt="Novatech logo" className="nav-logo" />
+        <img 
+          src="images/Logo.svg" 
+          alt="Novatech logo" 
+          className="nav-logo" 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        />
         <img
           src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
-          alt="menu-icon"
-          className="hamburger"
+          alt={isMenuOpen ? "Stäng meny" : "Öppna meny"}
+          className={`hamburger ${isMenuOpen ? "xmark" : ""}`}
           onClick={toggleMenu}
         />
         <ul className={`nav-list ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <li onClick={scrollToColleagues}>Kollegor</li>
-          <li onClick={scrollToServices}>Tjänster</li>
-          <li onClick={scrollToInsite}>Insikt</li>
-          <li onClick={scrollToInputField}>Kontakt</li>
-          <a href="#blog" target="blank">
-            <li>Blogg</li>
-          </a>
+          <li onClick={() => scrollToSection("#colleagues")}>Kollegor</li>
+          <li onClick={() => scrollToSection("#services")}>Tjänster</li>
+          <li onClick={() => scrollToSection("#insite")}>Insikt</li>
+          <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
+          <li className="mobile-menu-border">
+            <a href="#blog" target="blank" rel="noopener noreferrer">Blogg</a>
+          </li>
+
+          <div className="mobile-social">
+            <a
+              href="https://www.linkedin.com/company/novatech-solutions-ab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="mobile-social-icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/NovaTechSolutonsAB"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="mobile-social-icon" />
+            </a>
+            <a
+              href="https://www.instagram.com/novatechsolutionsab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="mobile-social-icon" />
+            </a>
+          </div>
         </ul>
 
         {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
