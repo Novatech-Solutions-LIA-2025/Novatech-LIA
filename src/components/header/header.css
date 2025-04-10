@@ -262,7 +262,7 @@
 
 @media screen and (max-width: 480px) {
   .hero-text {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 
   .hero-subtext {
@@ -270,6 +270,6 @@
   }
 
   .button-container {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 }
