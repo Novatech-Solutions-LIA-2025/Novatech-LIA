@@ -28,6 +28,11 @@
   margin: 0 auto;
   margin-top: 10px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:active {
+  transform: scale(0.95);
 }
 
 .footer-social {
@@ -46,9 +51,17 @@
   border-radius: 8px;
 }
 
+.follow-us {
+  font-size: 14x;
+  color: #400099;
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+
 .footer-info {
   font-size: var(--small-font-size);
   color: var(--secondary-text-color);
+  padding: 20px;
 }
 
 .footer-list {
@@ -58,7 +71,7 @@
 
 .footer-list li {
   padding: 1.5px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .footer-bottom-text {
@@ -93,7 +106,7 @@
 
 @media (max-width: 1400px) {
   .footer {
-    width: 70%;
+    width: 50%;
     margin: 80px auto 0;
   }
 
@@ -104,11 +117,21 @@
   }
   .footer-brand {
     width: 100%;
-    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .footer-logo {
-    width: 30%;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .footer-list {
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
   }
 }
 
