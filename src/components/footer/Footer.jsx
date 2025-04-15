@@ -27,7 +27,7 @@ function Footer() {
               className="footer-logo"
               onClick={scrollToTop}
             />
-
+            <p className="follow-us">Följ oss</p>
             <div className="footer-social">
               <a
                 href="https://www.linkedin.com/company/novatech-solutions-ab/"

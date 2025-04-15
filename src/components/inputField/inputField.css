@@ -16,7 +16,7 @@
 .input-field-text {
   max-width: 400px;
   position: relative;
-  
+
   text-align: left;
 }
 
@@ -190,10 +190,10 @@ label {
 
 /*Responsivitet*/
 
-@media (max-width: 1400px) {
+@media (max-width: 1024px) {
   .input-field-content {
     grid-template-columns: 1fr;
-    max-width: 650px; 
+    max-width: 650px;
     margin: 0 auto;
     text-align: left;
   }
@@ -203,10 +203,13 @@ label {
     text-align: left;
   }
 
-  
-
   .input-field-subtitle {
     justify-content: flex-start;
+    font-size: 0.8rem;
+  }
+
+  .input-field-title {
+    font-size: 2rem;
   }
 
   .input-field-row {
@@ -231,20 +234,19 @@ label {
   .input-field {
     padding: 1rem;
     margin-bottom: 100px;
-    text-align: left; 
+    text-align: left;
   }
 
   .input-field-title {
-    font-size: calc(var(--large-font-size) * 0.8);
+    font-size: 1.7rem;
     white-space: normal;
     margin-bottom: 1rem;
-    margin-top: 5px;
-    
   }
 
   .input-field-subtitle {
     justify-content: flex-start;
     margin-left: 5px;
+    font-size: 0.7rem;
   }
 
   button {
