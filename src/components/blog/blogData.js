@@ -34,7 +34,7 @@ const blogPosts = [
     image: "https://picsum.photos/200/300?random=5",
     date: "2025-04-01",
   },
-  {
+  /* {
     id: 6,
     title: "Framtidens arbetsplats",
     content: "Hur arbetsplatser förändras med ny teknik.",
@@ -54,7 +54,7 @@ const blogPosts = [
     content: "En introduktion till AI och dess möjligheter.",
     image: "https://picsum.photos/200/300?random=8",
     date: "2025-03-20",
-  },
+  }, */
 ];
 
 export default blogPosts;

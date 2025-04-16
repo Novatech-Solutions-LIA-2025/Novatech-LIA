@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-export default function BlogPostCard({ post }) {
+
+export default function BlogPostCard({ post, className = "" }) {
   return (
-    <article className="border rounded-xl p-4 shadow-md max-w-[400px] mx-auto">
+    <article className={`border rounded-xl p-4 shadow-md ${className}`}>
       <img 
         src={post.image} 
         alt={post.title} 
@@ -24,5 +25,5 @@ BlogPostCard.propTypes = {
     date: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
   }).isRequired,
+  className: PropTypes.string,
 };
-
