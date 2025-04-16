@@ -10,6 +10,12 @@
 .nav-logo {
   width: 200px;
   margin-left: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:active {
+  transform: scale(0.95);
 }
 
 .hamburger {
@@ -23,8 +29,8 @@
   z-index: 1001; /* Högre än menyn */
 }
 
-.hamburger.xmark {
-  transform: scale(0.95);
+.xmark {
+  opacity: 0.8;
 }
 
 .nav-list {
@@ -96,7 +102,6 @@
   }
 
   .mobile-menu-border {
-    
     padding-bottom: 3.5rem;
     position: relative;
   }

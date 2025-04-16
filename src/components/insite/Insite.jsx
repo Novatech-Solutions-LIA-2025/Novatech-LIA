@@ -4,9 +4,11 @@ import React, { useState, useRef, useEffect } from "react";
 import "./insite.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function Insite() {
   const images = [
+    // Temporära bilder
     { src: "/images/blog1.jpg", title: "Våra senaste inlägg" },
     { src: "/images/blog2.jpg", title: "Blogginlägg" },
     { src: "/images/blog3.jpg", title: "Blogginlägg" },
@@ -21,6 +23,7 @@ function Insite() {
   const sliderRef = useRef(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const timeoutRef = useRef(null); // För att förhindra dubbelklick buggar
 
   // Minimum swipe distance to trigger slide change
   const minSwipeDistance = 50;
@@ -31,11 +34,13 @@ function Insite() {
       setIsTablet(window.innerWidth <= 1400);
     };
 
-    
     handleResize();
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   const onTouchStart = (e) => {
@@ -52,7 +57,7 @@ function Insite() {
   const onTouchEnd = () => {
     if (!isMobile && !isTablet) return;
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
@@ -65,23 +70,25 @@ function Insite() {
   };
 
   const nextImage = () => {
-    if (currentImageIndex < images.length - 1) {
-      setSlideDirection("next");
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => prevIndex + 1);
-        setSlideDirection(null);
-      }, 1000);
-    }
+    if (currentImageIndex >= images.length - 1) return; // Stanna på sista bilden
+
+    clearTimeout(timeoutRef.current); // Avbryt pågående animation
+    setSlideDirection("next");
+    timeoutRef.current = setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => prevIndex + 1);
+      setSlideDirection(null);
+    }, 1000);
   };
 
   const prevImage = () => {
-    if (currentImageIndex > 0) {
-      setSlideDirection("prev");
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => prevIndex - 1);
-        setSlideDirection(null);
-      }, 1000);
-    }
+    if (currentImageIndex <= 0) return; // Stanna på första bilden
+
+    clearTimeout(timeoutRef.current); // Avbryt pågående animation
+    setSlideDirection("prev");
+    timeoutRef.current = setTimeout(() => {
+      setCurrentImageIndex((prevIndex) => prevIndex - 1);
+      setSlideDirection(null);
+    }, 1000);
   };
 
   const getTransform = () => {
@@ -120,7 +127,7 @@ function Insite() {
               onClick={prevImage}
               className={`slider-button prev-button ${
                 isPrevButtonDisabled ? "disabled" : ""
-              } ${isTablet ? 'tablet-button' : ''}`}
+              } ${isTablet ? "tablet-button" : ""}`}
               disabled={isPrevButtonDisabled}
             >
               &lt;
@@ -148,7 +155,7 @@ function Insite() {
 
                   <div className="insite-image-content">
                     <h2 className="insite-image-title">{image.title}</h2>
-                    <a href="#blog" target="blank">
+                    <Link href="/blog">
                       <p className="insite-read-more">
                         Läs mer{" "}
                         <FontAwesomeIcon
@@ -156,7 +163,7 @@ function Insite() {
                           className="insite-arrow"
                         />
                       </p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -168,7 +175,7 @@ function Insite() {
               onClick={nextImage}
               className={`slider-button slider-next-button ${
                 isNextButtonDisabled ? "disabled" : ""
-              } ${isTablet ? 'tablet-button' : ''}`}
+              } ${isTablet ? "tablet-button" : ""}`}
               disabled={isNextButtonDisabled}
             >
               &gt;

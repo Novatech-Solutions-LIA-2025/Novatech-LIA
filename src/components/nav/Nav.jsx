@@ -31,6 +31,16 @@ function Nav() {
     };
   }, []);
 
+  const handleLogoClick = () => {
+    if (isMenuOpen) {
+      // Stäng menyn om den är öppen
+      setIsMenyOpen(false);
+      document.body.style.overflow = '';
+    }
+    // Scrolla alltid till toppen
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -40,6 +50,8 @@ function Nav() {
     document.body.style.overflow = ''; // Återaktivera scroll när man klickar på länk
   };
 
+  
+
   return (
     <div>
       <nav className="navbar">
@@ -47,7 +59,7 @@ function Nav() {
           src="images/Logo.svg" 
           alt="Novatech logo" 
           className="nav-logo" 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={handleLogoClick}
         />
         <img
           src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
