@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 export default function BlogPostCard({ post, className = "" }) {
   return (
     <article className={`border rounded-xl p-4 shadow-md ${className}`}>
-      <img 
-        src={post.image} 
-        alt={post.title} 
+      <img
+        src={post.image}
+        alt={post.title}
         className="object-cover rounded-[20px] max-h-[400px] w-full"
       />
+
       <div className="p-4">
         <h2 className="text-xl font-semibold mt-4">{post.title}</h2>
         <p className="text-sm text-gray-500">{post.date}</p>
