@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./insite.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 function Insite() {
   const images = [
@@ -154,7 +155,7 @@ function Insite() {
 
                   <div className="insite-image-content">
                     <h2 className="insite-image-title">{image.title}</h2>
-                    <a href="#blog">
+                    <Link href="/blog">
                       <p className="insite-read-more">
                         Läs mer{" "}
                         <FontAwesomeIcon
@@ -162,7 +163,7 @@ function Insite() {
                           className="insite-arrow"
                         />
                       </p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
