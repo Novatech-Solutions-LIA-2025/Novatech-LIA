@@ -8,7 +8,7 @@ export default function Blog() {
         // Bestäm vilken kolumnspan inlägget ska få
         // Om du vill att mönstret ska upprepas per 3 inlägg kan du använda modulo
         let spanClass;
-        if (index % 2 === 0) {
+        if (index % 3 === 0) {
           spanClass = "md:row-span-1"; // Första i gruppen
         } else if (index % 2 === 1) {
           spanClass = "md:row-span-2 "; // Andra i gruppen
