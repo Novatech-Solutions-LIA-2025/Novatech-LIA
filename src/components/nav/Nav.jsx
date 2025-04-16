@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import "./nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -71,10 +72,9 @@ function Nav() {
           <li onClick={() => scrollToSection("#services")}>Tjänster</li>
           <li onClick={() => scrollToSection("#insite")}>Insikt</li>
           <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
-          <li className="mobile-menu-border" >
-            <a href="#blog" rel="noopener noreferrer">Blogg</a>
+          <li className="mobile-menu-border">
+           <Link href="/blog" onClick={() => setIsMenyOpen(false)}>Blogg</Link>
           </li>
-
           <div className="mobile-social">
             <a
               href="https://www.linkedin.com/company/novatech-solutions-ab/"
