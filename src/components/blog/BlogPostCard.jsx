@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function BlogPostCard({ post, className = "" }) {
   return (
     <article
-      className={`relative border rounded-xl p-4 shadow-md bg-cover min-h-[300px] bg-center bg-no-repeat ${className}`}
+      className={`relative rounded-xl p-4 shadow-md bg-cover min-h-[300px] bg-center bg-no-repeat ${className} hover:border hover:scale-105 transition-transform duration-300`}
       style={{ backgroundImage: `url(${post.image})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
