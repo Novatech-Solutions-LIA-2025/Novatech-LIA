@@ -50,7 +50,7 @@ function Nav() {
   return (
     <div>
       <nav className="navbar">
-        <Link href="/" className="logo-link">
+        <Link href="/" >
           <img
             src="images/Logo.svg"
             alt="Novatech logo"
@@ -65,10 +65,10 @@ function Nav() {
           onClick={toggleMenu}
         />
         <ul className={`nav-list ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <li onClick={() => scrollToSection("colleagues")}>Kollegor</li>
-          <li onClick={() => scrollToSection("services")}>Tjänster</li>
-          <li onClick={() => scrollToSection("insite")}>Insikt</li>
-          <li onClick={() => scrollToSection("input-field")}>Kontakt</li>
+          <li onClick={() => scrollToSection("#colleagues")}>Kollegor</li>
+          <li onClick={() => scrollToSection("#services")}>Tjänster</li>
+          <li onClick={() => scrollToSection("#insite")}>Insikt</li>
+          <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
           <li className="mobile-menu-border">
             <Link href="/blog">Blogg</Link>
           </li>
