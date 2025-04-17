@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 
 export default function BlogPostCard({ post, className = "" }) {
   return (
-    <article className={`border rounded-xl p-4 shadow-md ${className}`}>
-      <img
-        src={post.image}
-        alt={post.title}
-        className="object-cover rounded-[20px] max-h-[400px] w-full"
-      />
-
-      <div className="p-4">
-        <h2 className="text-xl font-semibold mt-4">{post.title}</h2>
-        <p className="text-sm text-gray-500">{post.date}</p>
-        <p className="my-2">{post.content}</p>
+    <article
+      className={`relative rounded-xl p-4 shadow-md bg-cover min-h-[300px] bg-center bg-no-repeat ${className} hover:border hover:scale-105 transition-transform duration-300`}
+      style={{ backgroundImage: `url(${post.image})` }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50 rounded-xl"></div>
+      <div className="relative p-4 text-white flex flex-col justify-end h-full">
+        <h2 className="text-3xl font-semibold">{post.title}</h2>
+        <div className="flex flex-row gap-2 items-center mt-2">
+          <p className="text-sm text-gray-300">{post.date}</p>
+          <p className="my-2">{post.content}</p>
+        </div>
       </div>
     </article>
   );

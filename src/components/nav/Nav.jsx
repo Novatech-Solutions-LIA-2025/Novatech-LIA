@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import "./nav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,32 +13,29 @@ import {
 
 function Nav() {
   const [isMenuOpen, setIsMenyOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Hantera body-scroll baserat på meny-status
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = ""; // återställ scroll vid unmount
+    };
+  }, [isMenuOpen]);
+
+  // Återställ meny och scroll när sökvägen ändras
+  useEffect(() => {
+    setIsMenyOpen(false);
+    document.body.style.overflow = "";
+  }, [pathname]);
 
   const toggleMenu = () => {
-    if (!isMenuOpen) {
-      // När menyn öppnas - stäng av scroll
-      document.body.style.overflow = "hidden";
-    } else {
-      // När menyn stängs - återaktivera scroll
-      document.body.style.overflow = "";
-    }
     setIsMenyOpen(!isMenuOpen);
   };
 
-  // Rensa upp vid unmount
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
-
   const handleLogoClick = () => {
-    if (isMenuOpen) {
-      // Stäng menyn om den är öppen
-      setIsMenyOpen(false);
-      document.body.style.overflow = "";
-    }
-    // Scrolla alltid till toppen
+    setIsMenyOpen(false);
+    document.body.style.overflow = "";
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -47,13 +45,12 @@ function Nav() {
       section.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenyOpen(false);
-    document.body.style.overflow = ""; // Återaktivera scroll när man klickar på länk
   };
 
   return (
     <div>
       <nav className="navbar">
-        <Link href="/" className="logo-link">
+        <Link href="/" >
           <img
             src="images/Logo.svg"
             alt="Novatech logo"
@@ -73,9 +70,7 @@ function Nav() {
           <li onClick={() => scrollToSection("#insite")}>Insikt</li>
           <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
           <li className="mobile-menu-border">
-            <Link href="/blog" onClick={() => setIsMenyOpen(false)}>
-              Blogg
-            </Link>
+            <Link href="/blog">Blogg</Link>
           </li>
           <div className="mobile-social">
             <a
@@ -113,7 +108,6 @@ function Nav() {
             </a>
           </div>
         </ul>
-
         {isMenuOpen && (
           <div className="menu-overlay" onClick={toggleMenu}></div>
         )}
