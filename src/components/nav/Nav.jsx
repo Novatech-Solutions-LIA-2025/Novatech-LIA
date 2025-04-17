@@ -16,10 +16,10 @@ function Nav() {
   const toggleMenu = () => {
     if (!isMenuOpen) {
       // När menyn öppnas - stäng av scroll
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
       // När menyn stängs - återaktivera scroll
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     setIsMenyOpen(!isMenuOpen);
   };
@@ -27,7 +27,7 @@ function Nav() {
   // Rensa upp vid unmount
   useEffect(() => {
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, []);
 
@@ -35,10 +35,10 @@ function Nav() {
     if (isMenuOpen) {
       // Stäng menyn om den är öppen
       setIsMenyOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
     // Scrolla alltid till toppen
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToSection = (sectionId) => {
@@ -47,20 +47,20 @@ function Nav() {
       section.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenyOpen(false);
-    document.body.style.overflow = ''; // Återaktivera scroll när man klickar på länk
+    document.body.style.overflow = ""; // Återaktivera scroll när man klickar på länk
   };
-
-  
 
   return (
     <div>
       <nav className="navbar">
-        <img 
-          src="images/Logo.svg" 
-          alt="Novatech logo" 
-          className="nav-logo" 
-          onClick={handleLogoClick}
-        />
+        <Link href="/" className="logo-link">
+          <img
+            src="images/Logo.svg"
+            alt="Novatech logo"
+            className="nav-logo"
+            onClick={handleLogoClick}
+          />
+        </Link>
         <img
           src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
           alt={isMenuOpen ? "Stäng meny" : "Öppna meny"}
@@ -73,7 +73,9 @@ function Nav() {
           <li onClick={() => scrollToSection("#insite")}>Insikt</li>
           <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
           <li className="mobile-menu-border">
-           <Link href="/blog" onClick={() => setIsMenyOpen(false)}>Blogg</Link>
+            <Link href="/blog" onClick={() => setIsMenyOpen(false)}>
+              Blogg
+            </Link>
           </li>
           <div className="mobile-social">
             <a
@@ -82,7 +84,10 @@ function Nav() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <FontAwesomeIcon icon={faLinkedin} className="mobile-social-icon" />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="mobile-social-icon"
+              />
             </a>
             <a
               href="https://www.facebook.com/NovaTechSolutonsAB"
@@ -90,7 +95,10 @@ function Nav() {
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <FontAwesomeIcon icon={faFacebook} className="mobile-social-icon" />
+              <FontAwesomeIcon
+                icon={faFacebook}
+                className="mobile-social-icon"
+              />
             </a>
             <a
               href="https://www.instagram.com/novatechsolutionsab/"
@@ -98,12 +106,17 @@ function Nav() {
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <FontAwesomeIcon icon={faInstagram} className="mobile-social-icon" />
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="mobile-social-icon"
+              />
             </a>
           </div>
         </ul>
 
-        {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
+        {isMenuOpen && (
+          <div className="menu-overlay" onClick={toggleMenu}></div>
+        )}
       </nav>
     </div>
   );
