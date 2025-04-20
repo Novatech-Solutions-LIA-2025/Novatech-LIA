@@ -48,71 +48,61 @@ function Nav() {
   };
 
   return (
-    <div>
-      <nav className="navbar">
-        <Link href="/" >
-          <img
-            src="images/Logo.svg"
-            alt="Novatech logo"
-            className="nav-logo"
-            onClick={handleLogoClick}
-          />
-        </Link>
+    <nav className="navbar">
+      <Link href="/">
         <img
-          src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
-          alt={isMenuOpen ? "Stäng meny" : "Öppna meny"}
-          className={`hamburger ${isMenuOpen ? "xmark" : ""}`}
-          onClick={toggleMenu}
+          src="images/Logo.svg"
+          alt="Novatech logo"
+          className="nav-logo"
+          onClick={handleLogoClick}
         />
-        <ul className={`nav-list ${isMenuOpen ? "mobile-menu-open" : ""}`}>
-          <li onClick={() => scrollToSection("#colleagues")}>Kollegor</li>
-          <li onClick={() => scrollToSection("#services")}>Tjänster</li>
-          <li onClick={() => scrollToSection("#insite")}>Insikt</li>
-          <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
-          <li className="mobile-menu-border">
-            <Link href="/blog">Blogg</Link>
-          </li>
-          <div className="mobile-social">
-            <a
-              href="https://www.linkedin.com/company/novatech-solutions-ab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="mobile-social-icon"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/NovaTechSolutonsAB"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FontAwesomeIcon
-                icon={faFacebook}
-                className="mobile-social-icon"
-              />
-            </a>
-            <a
-              href="https://www.instagram.com/novatechsolutionsab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="mobile-social-icon"
-              />
-            </a>
-          </div>
-        </ul>
-        {isMenuOpen && (
-          <div className="menu-overlay" onClick={toggleMenu}></div>
-        )}
-      </nav>
-    </div>
+      </Link>
+      <img
+        src={isMenuOpen ? "images/xmark-solid.svg" : "images/bars-solid.svg"}
+        alt={isMenuOpen ? "Stäng meny" : "Öppna meny"}
+        className={`hamburger ${isMenuOpen ? "xmark" : ""}`}
+        onClick={toggleMenu}
+      />
+      <ul className={`nav-list ${isMenuOpen ? "mobile-menu-open" : ""}`}>
+        <li onClick={() => scrollToSection("#colleagues")}>Kollegor</li>
+        <li onClick={() => scrollToSection("#services")}>Tjänster</li>
+        <li onClick={() => scrollToSection("#insite")}>Insikt</li>
+        <li onClick={() => scrollToSection("#input-field")}>Kontakt</li>
+        <li className="mobile-menu-border">
+          <Link href="/blog">Blogg</Link>
+        </li>
+        <div className="mobile-social">
+          <a
+            href="https://www.linkedin.com/company/novatech-solutions-ab/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="mobile-social-icon" />
+          </a>
+          <a
+            href="https://www.facebook.com/NovaTechSolutonsAB"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <FontAwesomeIcon icon={faFacebook} className="mobile-social-icon" />
+          </a>
+          <a
+            href="https://www.instagram.com/novatechsolutionsab/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="mobile-social-icon"
+            />
+          </a>
+        </div>
+      </ul>
+      {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
+    </nav>
   );
 }
 
