@@ -193,26 +193,24 @@ label {
 @media (max-width: 1024px) {
   .input-field-content {
     grid-template-columns: 1fr;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
     margin-left: -2rem;
   }
 
   .input-field-text {
-    max-width: 100%;
-    text-align: left;
+    width: 100%;
   }
 
   .input-field-subtitle {
     justify-content: flex-start;
     font-size: 0.8rem;
-    
+    margin-bottom: -1px;
   }
 
   .input-field-title {
     font-size: 2rem;
-    
   }
 
   .input-field-row {
@@ -230,14 +228,11 @@ label {
 
   .oval-gradient9 {
     right: 100%;
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
-
-
-
-
   .input-field {
     padding: 1rem;
     margin-bottom: 100px;
@@ -248,7 +243,7 @@ label {
   .input-field-title {
     font-size: 1.7rem;
     white-space: normal;
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
   }
 
   .input-field-subtitle {
