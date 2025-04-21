@@ -247,17 +247,19 @@
 
   .insite-header {
     margin-right: 0;
-    margin-bottom: 2rem;
+    margin-bottom: -2.5rem;
     padding: 30px;
+    margin-left: -2rem;
   }
 
   .insite-subtitle {
     margin-top: 10px;
     justify-content: flex-start;
+    
   }
 
   .insite-image-slider {
-    width: 90%;
+    max-width: 100%;
     transform: none;
   }
 
@@ -275,12 +277,19 @@
 }
 
 @media (max-width: 768px) {
+
+  .insite-header {
+    margin-left: -2rem;
+    
+  }
+  
   .insite-subitle {
     font-size: 0.7rem;
   }
 
   .insite-title {
     margin-top: 1rem;
+    
     margin-bottom: 1rem;
     font-size: 1.7rem;
   }
