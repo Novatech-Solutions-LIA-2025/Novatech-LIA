@@ -23,8 +23,8 @@ export default function Blog() {
     );
   }
   return (
-    <section>
-      <div className="grid md:grid-cols-3 gap-6 mx-16 p-6">
+    <section className="my-32">
+      <div className="grid md:grid-cols-3 gap-6 m-16 p-6">
         <div className="flex items-center justify-center flex-col p-8 text-center border rounded-xl min-h-[300px] col-span-1">
           <h1 className="text-3xl font-bold">Våra senaste blogginlägg</h1>
           <p className="text-sm text-gray-500 mt-2">
