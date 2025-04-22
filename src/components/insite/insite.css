@@ -7,7 +7,7 @@
   width: 90%;
   margin: 100px auto;
   padding: 20px;
-  padding-bottom: 4rem;
+
 }
 
 .insite-header {
@@ -289,13 +289,13 @@
 
   .insite-title {
     margin-top: 1rem;
-
     margin-bottom: 1rem;
     font-size: 1.7rem;
   }
 
   .insite-slider-container {
     width: 100%;
+    margin-bottom: -1.5rem;
   }
 
   .insite-image-content {
@@ -311,5 +311,9 @@
 
   .insite-image-slider {
     gap: 0;
+  }
+
+  .oval-gradient6 {
+    display: none;
   }
 }
