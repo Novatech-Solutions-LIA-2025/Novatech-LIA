@@ -77,6 +77,9 @@ function Nav() {
       className={`navbar ${isVisible ? "visible" : "hidden"}`}
       ref={navbarRef}
     >
+      <div className="oval-gradient"></div>
+      <div className="oval-gradient2"></div>
+      <div className="oval-gradient3"></div>
       <Link href="/">
         <img
           src="images/Logo.svg"

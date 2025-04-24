@@ -1,3 +1,64 @@
+.oval-gradient {
+  width: 220px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 10;
+  right: 270;
+  
+  rotate: -25deg;
+  backdrop-filter: blur(32px); /* Motsvarar Background Blur 32 i Figma */
+  -webkit-backdrop-filter: blur(32px); /* För Safari */
+  z-index: -2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+}
+.oval-gradient2 {
+  width: 220px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 10;
+  right: 190;
+  
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: -2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+}
+.oval-gradient3 {
+  width: 220px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    70deg,
+    rgba(72, 52, 212, 0),
+    rgba(72, 52, 212, 0.2)
+  );
+  position: absolute;
+  top: 10;
+  right: 90;
+  
+  rotate: -25deg;
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  z-index: -2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: blur(8px);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -73,7 +134,7 @@
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .navbar {
     width: 100%;
     padding: 20px;
