@@ -63,3 +63,39 @@ export async function fetchBlogPosts() {
     ],
   };
 }
+
+export async function fetchLatestBlogPostsForSlider() {
+  
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  return {
+    data: [
+      {
+        id: 1,
+        title: "Första inlägget",
+        image: "https://picsum.photos/600/400?random=9", 
+      },
+      {
+        id: 2,
+        title: "Nästa artikel",
+        image: "https://picsum.photos/600/400?random=10",
+      },
+      {
+        id: 3,
+        title: "Teknikens framtid",
+        image: "https://picsum.photos/600/400?random=11",
+      },
+      {
+        id: 4,
+        title: "Hållbar utveckling",
+        image: "https://picsum.photos/600/400?random=12",
+      },
+      {
+        id: 5,
+        title: "Innovation i fokus",
+        image: "https://picsum.photos/600/400?random=13",
+      },
+      
+    ],
+  };
+}
