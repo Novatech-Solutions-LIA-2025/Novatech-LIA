@@ -128,7 +128,9 @@
 
 .insite-image {
   width: 100%;
+  max-width: 100%;
   height: auto;
+  max-height: 400px; /* Justera detta värde efter behov */
   display: block;
   object-fit: cover;
 }
