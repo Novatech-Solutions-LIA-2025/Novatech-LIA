@@ -1,35 +1,18 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./insite.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { fetchLatestBlogPostsForSlider } from "../blog./api";
+import { fetchBlogPosts } from "../blog/api"; // Importera fetchBlogPosts från api.js
 
 function Insite() {
-  /*const images = [
-    // Temporära bilder
-    { src: "/images/blog1.jpg", title: "Våra senaste inlägg" },
-    { src: "/images/blog2.jpg", title: "Blogginlägg" },
-    { src: "/images/blog3.jpg", title: "Blogginlägg" },
-    { src: "/images/blog4.jpg", title: "Blogginlägg" },
-    { src: "/images/blog5.jpg", title: "Blogginlägg" },
-  ];*/
-
-  const [images, setImages] = useState([]);
+  const [blogPosts, setBlogPosts] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const sliderRef = useRef(null);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  const timeoutRef = useRef(null); // För att förhindra dubbelklick buggar
-  const [isLoading, setIsLoading] = useState(true); // State för att hantera laddning
-
-  // Minimum swipe distance to trigger slide change
-  const minSwipeDistance = 50;
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,77 +22,31 @@ function Insite() {
 
     handleResize();
     window.addEventListener("resize", handleResize);
+    
+    const fetchData = async () => {
+      const response = await fetchBlogPosts();
+      setBlogPosts(response.data);
+    };
+
+    fetchData();
+
     return () => {
       window.removeEventListener("resize", handleResize);
-      clearTimeout(timeoutRef.current);
     };
   }, []);
-
-  useEffect(() => {
-    const loadImages = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetchLatestBlogPostsForSlider();
-        if (response && response.data) {
-          setImages(response.data);
-        }
-      } catch (error) {
-        console.error("Fel vid hämtning av blogginlägg för slider:", error);
-        // Hantera felet här, t.ex. visa ett felmeddelande
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadImages();
-  }, []);
-
-  const onTouchStart = (e) => {
-    if (!isMobile && !isTablet) return;
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e) => {
-    if (!isMobile && !isTablet) return;
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!isMobile && !isTablet) return;
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      nextImage();
-    } else if (isRightSwipe) {
-      prevImage();
-    }
-  };
 
   const nextImage = () => {
-    if (currentImageIndex >= images.length - 1) return; // Stanna på sista bilden
-
-    clearTimeout(timeoutRef.current); // Avbryt pågående animation
+    if (currentImageIndex >= blogPosts.length - 1) return; // Stanna på sista bilden
     setSlideDirection("next");
-    timeoutRef.current = setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => prevIndex + 1);
-      setSlideDirection(null);
-    }, 1000);
+    setCurrentImageIndex(prevIndex => prevIndex + 1);
+    setSlideDirection(null);
   };
 
   const prevImage = () => {
     if (currentImageIndex <= 0) return; // Stanna på första bilden
-
-    clearTimeout(timeoutRef.current); // Avbryt pågående animation
     setSlideDirection("prev");
-    timeoutRef.current = setTimeout(() => {
-      setCurrentImageIndex((prevIndex) => prevIndex - 1);
-      setSlideDirection(null);
-    }, 1000);
+    setCurrentImageIndex(prevIndex => prevIndex - 1);
+    setSlideDirection(null);
   };
 
   const getTransform = () => {
@@ -123,31 +60,7 @@ function Insite() {
   };
 
   const isPrevButtonDisabled = currentImageIndex === 0;
-  const isNextButtonDisabled = currentImageIndex === images.length - 1;
-
-  /*if (isLoading) {
-    return (
-      <div id="#insite">
-        <div className="insite">
-          <div className="insite-header">
-            <h6 className="insite-subtitle">
-              <li className="blog-highlight"></li>
-              Blog
-            </h6>
-            <h3 className="insite-title">
-              <span className="insite-accent">NovaTech-</span>
-              <span>Insite</span>
-              <div className="insite-underline"></div>
-            </h3>
-            <div className="oval-gradient6"></div>
-          </div>
-          <div className="flex justify-center items-center h-64">
-            <h1 className="text-xl font-bold">Laddar inlägg...</h1>
-          </div>
-        </div>
-      </div>
-    );
-  }*/
+  const isNextButtonDisabled = currentImageIndex === blogPosts.length - 1;
 
   return (
     <div id="#insite">
@@ -169,9 +82,7 @@ function Insite() {
           {!isMobile && (
             <button
               onClick={prevImage}
-              className={`slider-button prev-button ${
-                isPrevButtonDisabled ? "disabled" : ""
-              } ${isTablet ? "tablet-button" : ""}`}
+              className={`slider-button prev-button ${isPrevButtonDisabled ? "disabled" : ""}`}
               disabled={isPrevButtonDisabled}
             >
               &lt;
@@ -182,24 +93,18 @@ function Insite() {
             <div
               className="insite-slider-wrapper"
               style={{ transform: getTransform() }}
-              ref={sliderRef}
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
             >
-              {images.map((image, index) => (
-                <div key={index} className="insite-slide">
+              {blogPosts.map((post, index) => (
+                <div key={post.id} className="insite-slide">
                   <div className="insite-image-wrapper">
                     <img
-                      src={image.image} 
-                      alt={image.title} 
+                      src={post.image}
+                      alt={`Slide ${index + 1}`}
                       className="insite-image"
                     />
                   </div>
-
                   <div className="insite-image-content">
-                    <h2 className="insite-image-title">{image.title}</h2>{" "}
-                    
+                    <h2 className="insite-image-title">{post.title}</h2>
                     <Link href="/blog">
                       <p className="insite-read-more">
                         Läs mer{" "}
@@ -218,9 +123,7 @@ function Insite() {
           {!isMobile && (
             <button
               onClick={nextImage}
-              className={`slider-button slider-next-button ${
-                isNextButtonDisabled ? "disabled" : ""
-              } ${isTablet ? "tablet-button" : ""}`}
+              className={`slider-button slider-next-button ${isNextButtonDisabled ? "disabled" : ""} ${isTablet ? "tablet-button" : ""}`}
               disabled={isNextButtonDisabled}
             >
               &gt;

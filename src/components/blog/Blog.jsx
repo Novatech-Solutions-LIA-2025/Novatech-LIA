@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { fetchBlogPosts } from "./api";
+import { useRouter } from "next/navigation";
 import BlogPostCard from "./BlogPostCard";
 
 export default function Blog() {
@@ -14,6 +15,8 @@ export default function Blog() {
       setIsLoading(false);
     });
   }, []);
+
+  const router = useRouter();
 
   if (isLoading) {
     return (
@@ -51,7 +54,13 @@ export default function Blog() {
             spanClass = "md:row-span-1";
           }
           return (
-            <BlogPostCard key={post.id} post={post} className={spanClass} />
+            <BlogPostCard
+              key={post.id}
+              post={post}
+              excerptLength={30}
+              className={spanClass}
+              onClick={() => router.push(`/blog/${post.id}`)}
+            />
           );
         })}
       </div>
