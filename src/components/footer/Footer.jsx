@@ -35,7 +35,7 @@ const contactInfo = [
 
 function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({
+    window.scrollTo({                      // Scroll-funktion till toppen av sidan, när man klickar på loggan 
       top: 0,
       behavior: "smooth",
     });

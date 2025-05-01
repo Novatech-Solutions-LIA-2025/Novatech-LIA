@@ -41,8 +41,8 @@
 
 /*.footer-logo:hover {
   transform: scale(1.05);
-} */
-
+} */                                                            
+                                            /* logo-animationer, om ni vill ha det? */
 .footer-logo:active {
   transform: scale(0.95);
 }
@@ -131,6 +131,10 @@
   .footer-list {
     list-style: none;
   }
+
+  .oval-gradient10 {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -162,7 +166,7 @@
   }
 
   .footer-logo {
-    width: 200px;
+    width: 180px;
   }
 
   .footer-social {

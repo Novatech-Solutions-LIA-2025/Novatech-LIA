@@ -40,30 +40,21 @@ function InputField() {
     let isValid = true;
     const newErrors = { ...errors };
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Namn saknas";
-      isValid = false;
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = "E-post saknas";
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Ogiltig e-postadress";
-      isValid = false;
-    }
+    newErrors.name = !formData.name.trim() ? "Namn saknas" : "";
+    newErrors.email = !formData.email.trim()
+      ? "E-post saknas"
+      : !/\S+@\S+\.\S+/.test(formData.email)
+      ? "Ogiltig e-postadress"
+      : "";
 
     // Telefonvalidering (valfritt men validera om det finns)
-    if (formData.phone && !/^\d+$/.test(formData.phone)) {
-      newErrors.phone = "Ogiltigt telefonnummer";
-      isValid = false;
-    }
+    newErrors.phone =
+      formData.phone && !/^\d+$/.test(formData.phone)
+        ? "Ogiltigt telefonnummer"
+        : "";
+    newErrors.message = !formData.message.trim() ? "Meddelande saknas" : "";
 
-    if (!formData.message.trim()) {
-      newErrors.message = "Meddelande saknas";
-      isValid = false;
-    }
-
+    isValid = !Object.values(newErrors).some((error) => error !== "");
     setErrors(newErrors);
     return isValid;
   };
@@ -71,7 +62,7 @@ function InputField() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Skicka formulärdata till servern eller utför åtgärd här
+      // Skickar formulärdata till servern eller utför åtgärd här
       console.log("Formulär skickat:", formData);
       alert("Tack för ditt meddelande! Vi återkommer snart.");
       // Återställ formulärdata efter att ha skickat
@@ -86,7 +77,7 @@ function InputField() {
   };
 
   return (
-    <div id="#input-field">
+    <div id="input-field-scroll">
       <div className="input-field">
         <div className="input-field-content">
           <div className="input-field-text">
@@ -101,18 +92,19 @@ function InputField() {
             </h3>
           </div>
 
-          <form className="input-field-form" onSubmit={handleSubmit}>
+          <form className="input-field-form" onSubmit={handleSubmit} noValidate>
             <div className="input-field-row">
               <label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="Namn"
+                  placeholder="Namn *"
                   className={`input-field-input ${
                     errors.name ? "input-error" : ""
                   }`}
                   value={formData.name}
                   onChange={handleChange}
+                  required
                 />
                 {errors.name && (
                   <span className="error-message">{errors.name}</span>
@@ -123,14 +115,15 @@ function InputField() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="E-post"
+                  placeholder="E-post *"
                   className={`input-field-input ${
                     errors.email ? "input-error" : ""
                   }`}
                   value={formData.email}
                   onChange={handleChange}
+                  required
                 />
-                {errors.name && (
+                {errors.email && (
                   <span className="error-message">{errors.email}</span>
                 )}
               </label>
@@ -147,7 +140,7 @@ function InputField() {
                   value={formData.phone}
                   onChange={handleChange}
                 />
-                {errors.name && (
+                {errors.phone && (
                   <span className="error-message">{errors.phone}</span>
                 )}
               </label>
@@ -170,17 +163,23 @@ function InputField() {
                   errors.message ? "input-error" : ""
                 }`}
                 name="message"
-                placeholder="Meddelande"
+                placeholder="Meddelande *"
                 rows="10"
                 value={formData.message}
                 onChange={handleChange}
+                required
               ></textarea>
               {errors.message && (
                 <span className="error-message">{errors.message}</span>
               )}
             </label>
             <div className="input-field-button">
-              <Button label="Skicka" variant="primary" type="submit"></Button>
+              <Button
+                label="Skicka"
+                variant="primary"
+                type="submit"
+                aria-label="Skicka kontaktformulär"
+              ></Button>
             </div>
           </form>
           <div className="oval-gradient8"></div>
