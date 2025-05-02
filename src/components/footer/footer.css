@@ -42,7 +42,7 @@
 /*.footer-logo:hover {
   transform: scale(1.05);
 } */                                                            
-                                            /* logo-animationer, om ni vill ha det? */
+                                            /* logo-animationer */
 .footer-logo:active {
   transform: scale(0.95);
 }
