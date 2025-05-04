@@ -107,13 +107,19 @@ function Nav() {
       >
         {!isBlogPage && (
           <>
-            <li onClick={() => scrollToSection("#colleagues")}>Kollegor</li>
-            <li onClick={() => scrollToSection("#services")}>Tjänster</li>
-            <li onClick={() => scrollToSection("insite-scroll")}>Insikt</li>
-            <li onClick={() => scrollToSection("input-field-scroll")}>Kontakt</li>
-            <li className="mobile-menu-border">
-              <Link href="/blog">Blogg</Link>
+            <li onClick={() => scrollToSection("colleagues-scroll")}>
+              Kollegor
             </li>
+            <li onClick={() => scrollToSection("services-scroll")}>Tjänster</li>
+            <li onClick={() => scrollToSection("insite-scroll")}>Insikt</li>
+            <li onClick={() => scrollToSection("input-field-scroll")}>
+              Kontakt
+            </li>
+            <div className="mobile-menu-border">
+              <li>
+                <Link href="/blog">Blogg</Link>
+              </li>
+            </div>
             <div className="mobile-social">
               <a
                 href="https://www.linkedin.com/company/novatech-solutions-ab/"

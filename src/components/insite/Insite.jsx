@@ -10,25 +10,15 @@ import { fetchBlogPosts } from "../blog/api";
 function Insite() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const [touchStart, setTouchStart] = useState(0); // För swipe-rörelser
 
   useEffect(() => {
-    const checkDeviceType = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkDeviceType();
-    window.addEventListener("resize", checkDeviceType);
-
     const fetchData = async () => {
       const response = await fetchBlogPosts(); // Hämtar blogginlägg
       setBlogPosts(response.data);
     };
 
     fetchData();
-
-    return () => window.removeEventListener("resize", checkDeviceType);
   }, []);
 
   const handleSwipe = (e) => {
@@ -66,18 +56,14 @@ function Insite() {
       </div>
 
       <div className="insite-image-slider">
-        {!isMobile && (
-          <button
-            onClick={() =>
-              setCurrentImageIndex((prev) => Math.max(prev - 1, 0))
-            }
-            className={`slider-button ${isPrevDisabled ? "disabled" : ""}`}
-            disabled={isPrevDisabled}
-            aria-label="Föregående inlägg"
-          >
-            &lt;
-          </button>
-        )}
+        <button
+          onClick={() => setCurrentImageIndex((prev) => Math.max(prev - 1, 0))}
+          className={`slider-button ${isPrevDisabled ? "disabled" : ""}`}
+          disabled={isPrevDisabled}
+          aria-label="Föregående inlägg"
+        >
+          &lt;
+        </button>
 
         <div
           className="insite-slider-container"
@@ -119,20 +105,18 @@ function Insite() {
           </div>
         </div>
 
-        {!isMobile && (
-          <button
-            onClick={() =>
-              setCurrentImageIndex((prev) =>
-                Math.min(prev + 1, blogPosts.length - 1)
-              )
-            }
-            className={`slider-button ${isNextDisabled ? "disabled" : ""}`}
-            disabled={isNextDisabled}
-            aria-label="Nästa inlägg"
-          >
-            &gt;
-          </button>
-        )}
+        <button
+          onClick={() =>
+            setCurrentImageIndex((prev) =>
+              Math.min(prev + 1, blogPosts.length - 1)
+            )
+          }
+          className={`slider-button ${isNextDisabled ? "disabled" : ""}`}
+          disabled={isNextDisabled}
+          aria-label="Nästa inlägg"
+        >
+          &gt;
+        </button>
       </div>
     </section>
   );

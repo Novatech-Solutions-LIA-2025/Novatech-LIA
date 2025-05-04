@@ -36,7 +36,7 @@ function Colleagues() {
   }, []);
 
   return (
-    <div id="#colleagues"> 
+    <div id="colleagues-scroll"> 
     <div className="colleagues-container">
       <div className="colleagues-title-container">
         <h6 className="colleagues-small-title">

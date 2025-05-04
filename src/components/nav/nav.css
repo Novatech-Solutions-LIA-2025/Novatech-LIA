@@ -10,7 +10,7 @@
   position: absolute;
   top: 10;
   right: 270;
-  
+
   rotate: -25deg;
   backdrop-filter: blur(32px); /* Motsvarar Background Blur 32 i Figma */
   -webkit-backdrop-filter: blur(32px); /* För Safari */
@@ -30,7 +30,7 @@
   position: absolute;
   top: 10;
   right: 190;
-  
+
   rotate: -25deg;
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
@@ -50,7 +50,7 @@
   position: absolute;
   top: 10;
   right: 90;
-  
+
   rotate: -25deg;
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
@@ -104,7 +104,7 @@
   filter: invert(1);
   margin-right: 70px;
   transform: scale(0.95);
-  z-index: 1001; /* Högre än menyn */
+  z-index: 1001;
 }
 
 .xmark {
@@ -131,9 +131,6 @@
   display: none;
 }
 
-
-
-
 @media screen and (max-width: 1024px) {
   .navbar {
     width: 100%;
@@ -145,7 +142,7 @@
     width: 180px;
     margin-left: 0;
     margin-right: auto;
-    z-index: 1002; /* Högre än navbar (1001) */
+    z-index: 1002;
     position: relative;
   }
 
@@ -194,6 +191,7 @@
   .mobile-menu-border {
     padding-bottom: 3.5rem;
     position: relative;
+    width: 100%;
   }
 
   .mobile-menu-border::after {
@@ -201,10 +199,10 @@
     position: absolute;
     bottom: 1rem;
     left: 0;
-    width: 90%; /* Justera denna procent för önskad bredd */
+    width: 90%;
     height: 2px;
     background-color: var(--accent);
-    margin-left: 0; /* För vänsterjusterad, eller använd auto för centrerad */
+    margin-left: 0;
   }
 
   .mobile-social {

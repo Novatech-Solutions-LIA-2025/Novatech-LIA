@@ -219,6 +219,17 @@
 
 /*Responsivitet*/
 
+@media (max-width: 1800px) {
+  .insite-title {
+    display: inline-block;
+    margin-right: 0;
+  }
+
+  .insite-image-slider {
+    max-width: clamp(700px, 65vw, 1000px);
+  }
+}
+
 @media (max-width: 1400px) {
   .insite-title {
     margin-top: 1rem;
