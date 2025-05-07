@@ -50,6 +50,9 @@ function Header() {
       <header>
         <div className="hero-border-shadow">
           <div className="hero-container">
+            {/* Add a separate mask layer to solve the issue in Chrome */}
+            <div className="hero-mask"></div>
+            
             <h1 className="hero-text">
               Växla Upp Med <span className="hero-highlight">Ny Tech</span>
               <br></br>- Framtiden Är Nu
