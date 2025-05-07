@@ -5,133 +5,120 @@ import "./insite.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { fetchBlogPosts } from "../blog/api"; // Importera fetchBlogPosts från api.js
+import { fetchBlogPosts } from "../blog/api";
 
 function Insite() {
   const [blogPosts, setBlogPosts] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+  const [touchStart, setTouchStart] = useState(0); // För swipe-rörelser
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsTablet(window.innerWidth <= 1400);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    
     const fetchData = async () => {
-      const response = await fetchBlogPosts();
+      const response = await fetchBlogPosts(); // Hämtar blogginlägg
       setBlogPosts(response.data);
     };
 
     fetchData();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
   }, []);
 
-  const nextImage = () => {
-    if (currentImageIndex >= blogPosts.length - 1) return; // Stanna på sista bilden
-    setSlideDirection("next");
-    setCurrentImageIndex(prevIndex => prevIndex + 1);
-    setSlideDirection(null);
+  const handleSwipe = (e) => {
+    setTouchStart(e.touches[0].clientX);
   };
 
-  const prevImage = () => {
-    if (currentImageIndex <= 0) return; // Stanna på första bilden
-    setSlideDirection("prev");
-    setCurrentImageIndex(prevIndex => prevIndex - 1);
-    setSlideDirection(null);
-  };
+  const handleSwipeEnd = (e) => {
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    const swipeThreshold = 50;
 
-  const getTransform = () => {
-    if (slideDirection === "next") {
-      return `translateX(-${(currentImageIndex + 1) * 100}%)`;
-    } else if (slideDirection === "prev") {
-      return `translateX(-${(currentImageIndex - 1) * 100}%)`;
-    } else {
-      return `translateX(-${currentImageIndex * 100}%)`;
+    if (diff > swipeThreshold && currentImageIndex < blogPosts.length - 1) {
+      setCurrentImageIndex((prev) => prev + 1);
+    } else if (diff < -swipeThreshold && currentImageIndex > 0) {
+      setCurrentImageIndex((prev) => prev - 1);
     }
   };
 
-  const isPrevButtonDisabled = currentImageIndex === 0;
-  const isNextButtonDisabled = currentImageIndex === blogPosts.length - 1;
+  const isPrevDisabled = currentImageIndex === 0;
+  const isNextDisabled =
+    currentImageIndex === blogPosts.length - 1 || blogPosts.length === 0;
 
   return (
-    <div id="#insite">
-      <div className="insite">
-        <div className="insite-header">
-          <h6 className="insite-subtitle">
-            <li className="blog-highlight"></li>
-            Blog
-          </h6>
-          <h3 className="insite-title">
-            <span className="insite-accent">NovaTech-</span>
-            <span>Insite</span>
-            <div className="insite-underline"></div>
-          </h3>
-          <div className="oval-gradient6"></div>
-        </div>
-
-        <div className="insite-image-slider">
-          {!isMobile && (
-            <button
-              onClick={prevImage}
-              className={`slider-button prev-button ${isPrevButtonDisabled ? "disabled" : ""}`}
-              disabled={isPrevButtonDisabled}
-            >
-              &lt;
-            </button>
-          )}
-
-          <div className="insite-slider-container">
-            <div
-              className="insite-slider-wrapper"
-              style={{ transform: getTransform() }}
-            >
-              {blogPosts.map((post, index) => (
-                <div key={post.id} className="insite-slide">
-                  <div className="insite-image-wrapper">
-                    <img
-                      src={post.image}
-                      alt={`Slide ${index + 1}`}
-                      className="insite-image"
-                    />
-                  </div>
-                  <div className="insite-image-content">
-                    <h2 className="insite-image-title">{post.title}</h2>
-                    <Link href="/blog">
-                      <p className="insite-read-more">
-                        Läs mer{" "}
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          className="insite-arrow"
-                        />
-                      </p>
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {!isMobile && (
-            <button
-              onClick={nextImage}
-              className={`slider-button slider-next-button ${isNextButtonDisabled ? "disabled" : ""} ${isTablet ? "tablet-button" : ""}`}
-              disabled={isNextButtonDisabled}
-            >
-              &gt;
-            </button>
-          )}
-        </div>
+    <section id="insite-scroll" className="insite">
+      <div className="insite-header">
+        <h2 className="insite-subtitle">
+          <span className="blog-highlight" aria-hidden="true"></span>
+          Blog
+        </h2>
+        <h3 className="insite-title">
+          <span className="insite-accent">NovaTech-</span>Insite
+          <span className="insite-underline"></span>
+        </h3>
+        <div className="oval-gradient6"></div>
       </div>
-    </div>
+
+      <div className="insite-image-slider">
+        <button
+          onClick={() => setCurrentImageIndex((prev) => Math.max(prev - 1, 0))}
+          className={`slider-button ${isPrevDisabled ? "disabled" : ""}`}
+          disabled={isPrevDisabled}
+          aria-label="Föregående inlägg"
+        >
+          &lt;
+        </button>
+
+        <div
+          className="insite-slider-container"
+          onTouchStart={handleSwipe}
+          onTouchEnd={handleSwipeEnd}
+        >
+          <div
+            className="insite-slider-wrapper"
+            style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+          >
+            {blogPosts.map((post) => (
+              <article key={post.id} className="insite-slide">
+                <div className="insite-image-wrapper">
+                  <img
+                    src={post.image}
+                    alt={post.title || "NovaTech blogginlägg"}
+                    className="insite-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="insite-image-content">
+                  <h4 className="insite-image-title">{post.title}</h4>
+                  <Link
+                    href={`/blog/${post.slug || post.id}`}
+                    passHref
+                    legacyBehavior
+                  >
+                    <a className="insite-read-more">
+                      Läs mer{" "}
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        className="insite-arrow"
+                      />
+                    </a>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <button
+          onClick={() =>
+            setCurrentImageIndex((prev) =>
+              Math.min(prev + 1, blogPosts.length - 1)
+            )
+          }
+          className={`slider-button ${isNextDisabled ? "disabled" : ""}`}
+          disabled={isNextDisabled}
+          aria-label="Nästa inlägg"
+        >
+          &gt;
+        </button>
+      </div>
+    </section>
   );
 }
 

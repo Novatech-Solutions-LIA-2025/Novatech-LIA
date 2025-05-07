@@ -26,14 +26,14 @@ function Header() {
   }, []);
 
   const scrollToInputField = () => {
-    const inputFieldSection = document.getElementById("#input-field");
+    const inputFieldSection = document.getElementById("input-field-scroll");
     if (inputFieldSection) {
       inputFieldSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const scrollToServices = () => {
-    const servicesSection = document.getElementById("#services");
+    const servicesSection = document.getElementById("services-scroll");
     if (servicesSection) {
       servicesSection.scrollIntoView({ behavior: "smooth" });
     }

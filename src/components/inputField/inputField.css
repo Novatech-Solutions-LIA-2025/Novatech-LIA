@@ -16,7 +16,6 @@
 .input-field-text {
   max-width: 400px;
   position: relative;
-
   text-align: left;
 }
 
@@ -99,6 +98,13 @@ label {
   background-color: transparent;
   border-radius: 4px;
   font-size: var(--small-font-size);
+  transition: border-color 0.3s ease;
+}
+
+.input-field-input:focus,
+.input-field-textarea:focus {
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
 }
 
 .input-field-textarea {
@@ -110,15 +116,18 @@ label {
   border-radius: 4px;
   resize: none;
   min-height: 150px;
+  transition: border-color 0.3s ease;
 }
 
 .input-error {
   border-color: #400099 !important;
 }
 
-/*.input-field-input:focus,
-.input-field-textarea:focus {
-  outline: none;
+/*.error-message {
+  color: var(--accent2);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
 }*/
 
 .input-field-button {
@@ -190,7 +199,7 @@ label {
 
 /*Responsivitet*/
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .input-field-content {
     grid-template-columns: 1fr;
     width: 100%;
@@ -221,13 +230,6 @@ label {
   .oval-gradient7,
   .oval-gradient8,
   .oval-gradient9 {
-    width: 300px;
-    height: 150px;
-    display: none;
-  }
-
-  .oval-gradient9 {
-    right: 100%;
     display: none;
   }
 }
@@ -255,5 +257,28 @@ label {
   button {
     width: 100%;
     height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-field {
+    padding: 0.5rem;
+    margin-bottom: 50px;
+  }
+
+  .input-field-title {
+    font-size: 1.4rem;
+  }
+
+  .input-field-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .input-field-input,
+  .input-field-textarea,
+  button {
+    min-height: 48px; /* Rekommenderad storlek för touch */
+    font-size: 0.8rem;
+    padding: 0.7rem;
   }
 }
