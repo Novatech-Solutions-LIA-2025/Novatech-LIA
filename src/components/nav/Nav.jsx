@@ -111,14 +111,14 @@ function Nav() {
               Kollegor
             </li>
             <li onClick={() => scrollToSection("services-scroll")}>Tjänster</li>
-            <li onClick={() => scrollToSection("insite-scroll")}>Insikt</li>
+            {/* <li onClick={() => scrollToSection("insite-scroll")}>Insikt</li> */}
             <li onClick={() => scrollToSection("input-field-scroll")}>
               Kontakt
             </li>
             <div className="mobile-menu-border">
-              <li>
+              {/* <li>
                 <Link href="/blog">Blogg</Link>
-              </li>
+              </li> */}
             </div>
             <div className="mobile-social">
               <a

@@ -11,7 +11,7 @@ export default function Home() {
       <Header></Header>
       <Colleagues></Colleagues>
       <Services></Services>
-      <Insite></Insite>
+      {/* <Insite></Insite> */}
       <InputField></InputField>
     </>
   );
