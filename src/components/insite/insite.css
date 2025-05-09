@@ -91,7 +91,7 @@
   width: clamp(300px, 60%, 800px); /* Flytande bredd mellan 300px och 800px */
   overflow: hidden;
   border-radius: 20px;
-  padding-top: 3rem;
+  margin-top: 3rem;
 }
 
 .insite-slider-wrapper {
@@ -106,7 +106,6 @@
   width: 100%;
   transition: transform 0.3s ease, opacity 0.3s ease;
   user-select: none;
-  /*touch-action: pan-y;*/
 }
 
 .insite-slide::before {
@@ -130,7 +129,7 @@
   width: 100%;
   max-width: 100%;
   height: auto;
-  max-height: 400px; /* Justera detta värde efter behov */
+  max-height: 400px;
   display: block;
   object-fit: cover;
 }
