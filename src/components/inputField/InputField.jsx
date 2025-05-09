@@ -81,7 +81,7 @@ function InputField() {
       <div className="input-field">
         <div className="input-field-content">
           <div className="input-field-text">
-            <div className="oval-gradient9"></div>
+            <div className="oval-gradient7"></div>
             <h6 className="input-field-subtitle">
               <li className="contact-highlight"></li>
               Kontakta oss
@@ -183,7 +183,8 @@ function InputField() {
             </div>
           </form>
           <div className="oval-gradient8"></div>
-          <div className="oval-gradient7"></div>
+          <div className="oval-gradient9"></div>
+          
         </div>
       </div>
     </div>

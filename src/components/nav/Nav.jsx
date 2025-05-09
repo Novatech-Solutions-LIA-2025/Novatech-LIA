@@ -12,15 +12,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function Nav() {
-  const [isMenuOpen, setIsMenyOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenyOpen] = useState(false); // Hanterar menyens öppna/stängda tillstånd
+  const [isVisible, setIsVisible] = useState(true); // Kontrollerar om navbaren är synlig
+  const [lastScrollY, setLastScrollY] = useState(0); // Sparar senaste scrollpositionen
   const pathname = usePathname();
   const navbarRef = useRef(null);
 
   const isBlogPage = pathname.startsWith("/blog");
 
-  // Hantera scrollriktning
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
